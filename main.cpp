@@ -11,21 +11,22 @@ int main( int argc, char *argv[] )
 
     Connection::getInstance()->connecter();
 
-    /*QDjangoQuerySet< Catalogue > catalogues;
-    QDjangoQuerySet< Fournisseur > fournisseurs;
-
-    MSRelationalTableModel< Catalogue, Fournisseur > *model = new MSRelationalTableModel< Catalogue, Fournisseur >( catalogues,
-                                                                                                                  fournisseurs,
-                                                                                                                  "nom" );
-    QTableView *view = new QTableView;
-    view->setModel( model );
-
-    view->show();*/
-
-    QDjangoQuerySet< ProduitStock > produits;
+    /*QDjangoQuerySet< ProduitStock > produits;
 
     MSTableModel< ProduitStock > *model = new MSTableModel< ProduitStock >();
     model->setQuerySet( produits );
+
+    QTableView *view = new QTableView();
+    view->setModel( model );
+    view->show();*/
+
+    QDjangoQuerySet< Catalogue > catalogues;
+    QDjangoQuerySet< Fournisseur > fournisseurs;
+
+    MSRelationalTableModel< Catalogue, Fournisseur > *model = new MSRelationalTableModel< Catalogue, Fournisseur >;
+    model->setSrcQuerySet( catalogues );
+    model->setDestQuerySet( fournisseurs );
+    model->setRelation( "nom" );
 
     QTableView *view = new QTableView();
     view->setModel( model );

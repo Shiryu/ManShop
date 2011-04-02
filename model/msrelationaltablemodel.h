@@ -20,7 +20,13 @@ private:
 public:
     const static int NB_CHAMPS_PAR_DEFAUT = 2;
 
-    MSRelationalTableModel( const QDjangoQuerySet< S > &source, const QDjangoQuerySet< T > &cible, const char *liaison);
+    MSRelationalTableModel( QObject *parent = 0 );
+    MSRelationalTableModel( const QDjangoQuerySet< S > &source, const QDjangoQuerySet< T > &cible, QObject *parent = 0 );
+    MSRelationalTableModel( const QDjangoQuerySet< S > &source, const QDjangoQuerySet< T > &cible, const char *liaison, QObject *parent = 0 );
+
+    void setSrcQuerySet( QDjangoQuerySet< S > &source );
+    void setDestQuerySet( QDjangoQuerySet< T > &cible );
+    void setRelation( const char *liaison );
 
     int rowCount( const QModelIndex &parent = QModelIndex() ) const;
     int columnCount( const QModelIndex &parent = QModelIndex() ) const;
@@ -29,12 +35,46 @@ public:
 };
 
 template < typename S, typename T >
-MSRelationalTableModel< S, T >::MSRelationalTableModel( const QDjangoQuerySet<S> &source, const QDjangoQuerySet<T> &cible, const char *liaison ) :
+MSRelationalTableModel< S, T >::MSRelationalTableModel( QObject *parent ) : QAbstractTableModel( parent )
+{
+
+}
+
+template < typename S, typename T >
+MSRelationalTableModel< S, T >::MSRelationalTableModel( const QDjangoQuerySet<S> &source, const QDjangoQuerySet<T> &cible, QObject *parent ) :
+        QAbstractTableModel( parent ),
+        m_source( source ),
+        m_cible( cible )
+{
+
+}
+
+template < typename S, typename T >
+MSRelationalTableModel< S, T >::MSRelationalTableModel( const QDjangoQuerySet<S> &source, const QDjangoQuerySet<T> &cible, const char *liaison, QObject *parent ) :
+        QAbstractTableModel( parent ),
         m_source( source ),
         m_cible( cible ),
         m_liaison( liaison )
 {
 
+}
+
+template < typename S, typename T >
+void MSRelationalTableModel< S, T >::setSrcQuerySet( QDjangoQuerySet<S> &source )
+{
+    m_source = source;
+}
+
+template < typename S, typename T >
+void MSRelationalTableModel< S, T >::setDestQuerySet( QDjangoQuerySet< T > &cible )
+{
+    m_cible = cible;
+}
+
+template < typename S, typename T >
+void MSRelationalTableModel< S, T >::setRelation( const char *liaison )
+{
+    m_liaison = liaison;
 }
 
 template < typename S, typename T >
