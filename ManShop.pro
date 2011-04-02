@@ -6,7 +6,7 @@
 
 QT       += core gui sql
 
-TARGET = Manshop
+TARGET = ManShop
 TEMPLATE = app
 
 LIBS += /usr/local/lib/libqdjango.a
