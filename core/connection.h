@@ -22,21 +22,24 @@
 #include "vente.h"
 #include "produitvente.h"
 
-const QString nomDB = "../Manshop/db/manshop.db";
+const QString nomDB = "../ManShop/db/manshop.db";
 
-class Connection
+namespace Core
 {
-private:
-    Connection();
-    static Connection* instance;
+    class Connection
+    {
+    private:
+        Connection();
+        static Connection* instance;
 
-public:
-    static Connection* getInstance();
+    public:
+        static Connection* getInstance();
 
-    bool connecter();
-    void creerTablesSingletons();
+        bool connecter();
+        void creerTablesSingletons();
 
-    ~Connection();
+        ~Connection();
+    };
 };
 
 #endif // CONNECTION_H

@@ -1,0 +1,121 @@
+\hypertarget{class_core_1_1_commande}{
+\section{Référence de la classe Core::Commande}
+\label{d0/d92/class_core_1_1_commande}\index{Core::Commande@{Core::Commande}}
+}
+
+
+Graphe de collaboration de Core::Commande:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{d4/da3/class_core_1_1_commande__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Types publics}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Etat} \{ {\bfseries EnAttente}, 
+{\bfseries EnAttenteLivraison}, 
+{\bfseries LivraisonPartielle}, 
+{\bfseries LivraisonTotale}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_core_1_1_commande_a64cb1834d666c1ec9f6cb0f11b5f9c78}{
+{\bfseries Commande} (QObject $\ast$parent=0)}
+\label{d0/d92/class_core_1_1_commande_a64cb1834d666c1ec9f6cb0f11b5f9c78}
+
+\item 
+\hypertarget{class_core_1_1_commande_ad24bf970d58e268642a102650698ba6e}{
+{\bfseries Commande} (QString code, QObject $\ast$parent=0)}
+\label{d0/d92/class_core_1_1_commande_ad24bf970d58e268642a102650698ba6e}
+
+\item 
+\hypertarget{class_core_1_1_commande_ad9219981f0c67b8627924c422c968aa6}{
+{\bfseries Commande} (QString code, QDate date, QObject $\ast$parent=0)}
+\label{d0/d92/class_core_1_1_commande_ad9219981f0c67b8627924c422c968aa6}
+
+\item 
+\hypertarget{class_core_1_1_commande_af17d69972864c85cf980845772bc737f}{
+QString {\bfseries getCode} () const }
+\label{d0/d92/class_core_1_1_commande_af17d69972864c85cf980845772bc737f}
+
+\item 
+\hypertarget{class_core_1_1_commande_a89b8b550e9eeea14e5c7c81e06bf485a}{
+QDate {\bfseries getDate} () const }
+\label{d0/d92/class_core_1_1_commande_a89b8b550e9eeea14e5c7c81e06bf485a}
+
+\item 
+\hypertarget{class_core_1_1_commande_a3d2b4980b3472ac81e91be956a6ac537}{
+int {\bfseries getEtat} () const }
+\label{d0/d92/class_core_1_1_commande_a3d2b4980b3472ac81e91be956a6ac537}
+
+\item 
+\hypertarget{class_core_1_1_commande_a8b86b2723f049285eef734c72585e704}{
+\hyperlink{class_core_1_1_fournisseur}{Fournisseur} $\ast$ {\bfseries getFournisseur} () const }
+\label{d0/d92/class_core_1_1_commande_a8b86b2723f049285eef734c72585e704}
+
+\item 
+\hypertarget{class_core_1_1_commande_a81e784a1aedef144d76642d318b74b71}{
+void {\bfseries setCode} (QString code)}
+\label{d0/d92/class_core_1_1_commande_a81e784a1aedef144d76642d318b74b71}
+
+\item 
+\hypertarget{class_core_1_1_commande_af031ef6f31adc61a5f3377eda393de75}{
+void {\bfseries setDate} (QDate date)}
+\label{d0/d92/class_core_1_1_commande_af031ef6f31adc61a5f3377eda393de75}
+
+\item 
+\hypertarget{class_core_1_1_commande_af52344f6b446455c79ab3a6e9cb9b88e}{
+void {\bfseries setEtat} (int etat)}
+\label{d0/d92/class_core_1_1_commande_af52344f6b446455c79ab3a6e9cb9b88e}
+
+\item 
+\hypertarget{class_core_1_1_commande_a92c4d0da3e627176e5899154d8cd73f8}{
+void {\bfseries setFournisseur} (\hyperlink{class_core_1_1_fournisseur}{Fournisseur} $\ast$fournisseur)}
+\label{d0/d92/class_core_1_1_commande_a92c4d0da3e627176e5899154d8cd73f8}
+
+\item 
+\hypertarget{class_core_1_1_commande_a9788565cf3467dd64869b684a92ef096}{
+\hyperlink{class_core_1_1_fournisseur}{Fournisseur} $\ast$ {\bfseries getRelation} () const }
+\label{d0/d92/class_core_1_1_commande_a9788565cf3467dd64869b684a92ef096}
+
+\end{DoxyCompactItemize}
+\subsection*{Propriétés}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_core_1_1_commande_af012ec6904b174e6487c279989c3e622}{
+QString {\bfseries code}}
+\label{d0/d92/class_core_1_1_commande_af012ec6904b174e6487c279989c3e622}
+
+\item 
+\hypertarget{class_core_1_1_commande_a18973533ff7bddd4dd2bc047cc93a738}{
+QDate {\bfseries date}}
+\label{d0/d92/class_core_1_1_commande_a18973533ff7bddd4dd2bc047cc93a738}
+
+\item 
+\hypertarget{class_core_1_1_commande_a6db42c7e148b1ef83a3d2988814dc547}{
+int {\bfseries etat}}
+\label{d0/d92/class_core_1_1_commande_a6db42c7e148b1ef83a3d2988814dc547}
+
+\item 
+\hypertarget{class_core_1_1_commande_a1f6d336f1eab3a0471ddea678d106e00}{
+\hyperlink{class_core_1_1_fournisseur}{Fournisseur} {\bfseries fournisseur}}
+\label{d0/d92/class_core_1_1_commande_a1f6d336f1eab3a0471ddea678d106e00}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+
+
+Définition à la ligne 9 du fichier commande.h.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants :\begin{DoxyCompactItemize}
+\item 
+core/commande.h\item 
+core/commande.cpp\end{DoxyCompactItemize}

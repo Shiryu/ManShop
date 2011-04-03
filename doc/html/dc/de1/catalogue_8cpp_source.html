@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ManShop:  Fichier source de core/catalogue.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">ManShop&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Logiciel de gestion de magasins</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('dc/de1/catalogue_8cpp.html','../../');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<h1>core/catalogue.cpp</h1>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;catalogue.h&quot;</span>
+<a name="l00002"></a>00002 <span class="preprocessor">#include &lt;QDebug&gt;</span>
+<a name="l00003"></a>00003 
+<a name="l00007"></a>00007 <span class="keyword">namespace </span>Core
+<a name="l00008"></a>00008 {
+<a name="l00012"></a><a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a1563d794f593a4978785d4e784628123">00012</a>     <a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a1563d794f593a4978785d4e784628123" title="Crée un nouveau Catalogue.">Catalogue::Catalogue</a>( QObject *parent ) : QDjangoModel( parent )
+<a name="l00013"></a>00013     {
+<a name="l00014"></a>00014         setForeignKey( <span class="stringliteral">&quot;fournisseur&quot;</span>, <span class="keyword">new</span> <a class="code" href="../../dd/d46/class_core_1_1_fournisseur.html">Fournisseur</a>( <span class="keyword">this</span> ) );
+<a name="l00015"></a>00015     }
+<a name="l00016"></a>00016 
+<a name="l00021"></a><a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a56f8f6931050a2592ebc2b2cb3f5ef1d">00021</a>     <a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a1563d794f593a4978785d4e784628123" title="Crée un nouveau Catalogue.">Catalogue::Catalogue</a>( QString code, QObject *parent ) :
+<a name="l00022"></a>00022             QDjangoModel( parent ),
+<a name="l00023"></a>00023             m_code( code )
+<a name="l00024"></a>00024     {
+<a name="l00025"></a>00025         setForeignKey( <span class="stringliteral">&quot;fournisseur&quot;</span>, <span class="keyword">new</span> <a class="code" href="../../dd/d46/class_core_1_1_fournisseur.html">Fournisseur</a>( <span class="keyword">this</span> ) );
+<a name="l00026"></a>00026     }
+<a name="l00027"></a>00027 
+<a name="l00032"></a><a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a5a96958fe38e82024175a2dbb40d7d29">00032</a>     <a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a1563d794f593a4978785d4e784628123" title="Crée un nouveau Catalogue.">Catalogue::Catalogue</a>( QString code, QDate dateEnregistrement, QObject *parent ) :
+<a name="l00033"></a>00033             QDjangoModel( parent ),
+<a name="l00034"></a>00034             m_code( code ),
+<a name="l00035"></a>00035             m_dateEnregistrement( dateEnregistrement )
+<a name="l00036"></a>00036     {
+<a name="l00037"></a>00037         setForeignKey( <span class="stringliteral">&quot;fournisseur&quot;</span>, <span class="keyword">new</span> <a class="code" href="../../dd/d46/class_core_1_1_fournisseur.html">Fournisseur</a>( <span class="keyword">this</span> ) );
+<a name="l00038"></a>00038     }
+<a name="l00039"></a>00039 
+<a name="l00043"></a><a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a6dcea2e7862042cd9f05dae894d47a7c">00043</a>     QString <a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a6dcea2e7862042cd9f05dae894d47a7c" title="Renvoie le code du catalogue.">Catalogue::getCode</a>()<span class="keyword"> const</span>
+<a name="l00044"></a>00044 <span class="keyword">    </span>{
+<a name="l00045"></a>00045         <span class="keywordflow">return</span> m_code;
+<a name="l00046"></a>00046     }
+<a name="l00047"></a>00047 
+<a name="l00051"></a><a class="code" href="../../de/d33/class_core_1_1_catalogue.html#ac60f6d1630d03598e313ba497ab18f56">00051</a>     QDate <a class="code" href="../../de/d33/class_core_1_1_catalogue.html#ac60f6d1630d03598e313ba497ab18f56" title="Renvoie la date à laquelle le catalogue a été enregistré">Catalogue::getDateEnregistrement</a>()<span class="keyword"> const</span>
+<a name="l00052"></a>00052 <span class="keyword">    </span>{
+<a name="l00053"></a>00053         <span class="keywordflow">return</span> m_dateEnregistrement;
+<a name="l00054"></a>00054     }
+<a name="l00055"></a>00055 
+<a name="l00059"></a><a class="code" href="../../de/d33/class_core_1_1_catalogue.html#aa8d603a01cab36e2be56a2f10219b56c">00059</a>     <a class="code" href="../../dd/d46/class_core_1_1_fournisseur.html">Fournisseur</a>* <a class="code" href="../../de/d33/class_core_1_1_catalogue.html#aa8d603a01cab36e2be56a2f10219b56c" title="Renvoie l&amp;#39;objet Fournisseur correspondant au fournisseur dont émane le catalogue.">Catalogue::getFournisseur</a>()<span class="keyword"> const</span>
+<a name="l00060"></a>00060 <span class="keyword">    </span>{
+<a name="l00061"></a>00061         <span class="keywordflow">return</span> qobject_cast&lt; <a class="code" href="../../dd/d46/class_core_1_1_fournisseur.html">Fournisseur</a>* &gt;( foreignKey( <span class="stringliteral">&quot;fournisseur&quot;</span>) );
+<a name="l00062"></a>00062     }
+<a name="l00063"></a>00063 
+<a name="l00067"></a><a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a065f70f6b69ff02593e0be7813142be4">00067</a>     <span class="keywordtype">void</span> <a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a065f70f6b69ff02593e0be7813142be4" title="Modifie le code du catalogue.">Catalogue::setCode</a>( QString code )
+<a name="l00068"></a>00068     {
+<a name="l00069"></a>00069         m_code = code;
+<a name="l00070"></a>00070     }
+<a name="l00071"></a>00071 
+<a name="l00075"></a><a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a722b8c534479e7aad59a7d425250617c">00075</a>     <span class="keywordtype">void</span> <a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a722b8c534479e7aad59a7d425250617c" title="Modifie la date d&amp;#39;enregistrement du catalogue.">Catalogue::setDateEnregistrement</a>( QDate dateEnregistrement )
+<a name="l00076"></a>00076     {
+<a name="l00077"></a>00077         m_dateEnregistrement = dateEnregistrement;
+<a name="l00078"></a>00078     }
+<a name="l00079"></a>00079 
+<a name="l00083"></a><a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a5f1c6cd886338385a95ce8105dfd48e1">00083</a>     <span class="keywordtype">void</span> <a class="code" href="../../de/d33/class_core_1_1_catalogue.html#a5f1c6cd886338385a95ce8105dfd48e1" title="Modifie le fournisseur associé au catalogue.">Catalogue::setFournisseur</a>( <a class="code" href="../../dd/d46/class_core_1_1_fournisseur.html">Fournisseur</a>* fournisseur )
+<a name="l00084"></a>00084     {
+<a name="l00085"></a>00085         setForeignKey( <span class="stringliteral">&quot;fournisseur&quot;</span>, fournisseur );
+<a name="l00086"></a>00086     }
+<a name="l00087"></a>00087 }
+</pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>catalogue.cpp</b>      </li>
+      <li class="footer">Généré le Sun Apr 3 2011 pour ManShop par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
+    </ul>
+  </div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+</body>
+</html>

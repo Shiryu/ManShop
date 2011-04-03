@@ -4,33 +4,39 @@
 #include "produitcommande.h"
 #include "catalogue.h"
 
-class RProduitCatalogue : public QDjangoModel
+namespace Core
 {
-    Q_OBJECT
+    class RProduitCatalogue : public QDjangoModel
+    {
+        Q_OBJECT
 
-    Q_PROPERTY( QString id READ getId WRITE setId )
-    Q_PROPERTY( Catalogue* catalogue READ getCatalogue WRITE setCatalogue )
-    Q_PROPERTY( ProduitFournisseur* produit READ getProduit WRITE setProduit )
+        Q_PROPERTY( QString id READ getId WRITE setId )
+                Q_PROPERTY( Catalogue* catalogue READ getCatalogue WRITE setCatalogue )
+                Q_PROPERTY( ProduitFournisseur* produit READ getProduit WRITE setProduit )
 
-    Q_CLASSINFO( "id", "primary_key=true" )
+                Q_CLASSINFO( "id", "primary_key=true" )
 
-private:
-    QString m_id;
+    private:
+                QString m_id;
 
-    QString creerId();
-    QString getId() const;
-    void setId( QString id );
+        Catalogue *catalogue;
+        ProduitFournisseur *produit;
 
-public:
-    RProduitCatalogue( QObject *parent = 0 );
+        QString creerId();
+        QString getId() const;
+        void setId( QString id );
 
-    Catalogue* getCatalogue() const;
-    ProduitFournisseur* getProduit() const;
+    public:
+        RProduitCatalogue( QObject *parent = 0 );
 
-    void setCatalogue( Catalogue* catalogue );
-    void setProduit( ProduitFournisseur* produit );
+        Catalogue* getCatalogue() const;
+        ProduitFournisseur* getProduit() const;
 
-    bool save();
+        void setCatalogue( Catalogue* catalogue );
+        void setProduit( ProduitFournisseur* produit );
+
+        bool save();
+    };
 };
 
 #endif // RPRODUITCATALOGUE_H

@@ -3,33 +3,36 @@
 
 #include "objet.h"
 
-class Fournisseur : public QDjangoModel
+namespace Core
 {
-    Q_OBJECT
+    class Fournisseur : public QDjangoModel
+    {
+        Q_OBJECT
 
-    Q_PROPERTY( QString code READ getCode WRITE setCode )
-    Q_PROPERTY( QString nom READ getNom WRITE setNom )
-    Q_PROPERTY( QString adresse READ getAdresse WRITE setAdresse )
+        Q_PROPERTY( QString code READ getCode WRITE setCode )
+        Q_PROPERTY( QString nom READ getNom WRITE setNom )
+        Q_PROPERTY( QString adresse READ getAdresse WRITE setAdresse )
 
-    Q_CLASSINFO( "code", "primary_key=true" )
+        Q_CLASSINFO( "code", "primary_key=true" )
 
-private:
-    QString m_code;
-    QString m_nom;
-    QString m_adresse;
+    private:
+        QString m_code;
+        QString m_nom;
+        QString m_adresse;
 
-public:
-    Fournisseur( QObject *parent = 0 );
-    Fournisseur( QString code, QObject *parent = 0 );
-    Fournisseur( QString code, QString nom, QString adresse, QObject *parent = 0 );
+    public:
+        Fournisseur( QObject *parent = 0 );
+        Fournisseur( QString code, QObject *parent = 0 );
+        Fournisseur( QString code, QString nom, QString adresse, QObject *parent = 0 );
 
-    QString getCode() const;
-    QString getNom() const;
-    QString getAdresse() const;
+        QString getCode() const;
+        QString getNom() const;
+        QString getAdresse() const;
 
-    void setCode( QString code );
-    void setNom( QString nom );
-    void setAdresse( QString adresse );
+        void setCode( QString code );
+        void setNom( QString nom );
+        void setAdresse( QString adresse );
+    };
 };
 
 #endif // FOURNISSEUR_H

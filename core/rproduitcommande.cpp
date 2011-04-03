@@ -1,43 +1,46 @@
 #include "rproduitcommande.h"
 
-RProduitCommande::RProduitCommande( QObject *parent ) : QDjangoModel( parent )
+namespace Core
 {
-    setForeignKey( "commande", new Commande( this ) );
-    setForeignKey( "produit", new ProduitCommande( this ) );
-}
+    RProduitCommande::RProduitCommande( QObject *parent ) : QDjangoModel( parent )
+    {
+        setForeignKey( "commande", new Commande( this ) );
+        setForeignKey( "produit", new ProduitCommande( this ) );
+    }
 
-QString RProduitCommande::getId() const
-{
-    return m_id;
-}
+    QString RProduitCommande::getId() const
+    {
+        return m_id;
+    }
 
-Commande* RProduitCommande::getCommande() const
-{
-    return qobject_cast< Commande* >( ( foreignKey( "commande" ) ) );
-}
+    Commande* RProduitCommande::getCommande() const
+    {
+        return qobject_cast< Commande* >( ( foreignKey( "commande" ) ) );
+    }
 
-ProduitCommande* RProduitCommande::getProduit() const
-{
-    return qobject_cast< ProduitCommande* >( ( foreignKey( "produit" ) ) );
-}
+    ProduitCommande* RProduitCommande::getProduit() const
+    {
+        return qobject_cast< ProduitCommande* >( ( foreignKey( "produit" ) ) );
+    }
 
-void RProduitCommande::setId( QString id )
-{
-    m_id = id;
-}
+    void RProduitCommande::setId( QString id )
+    {
+        m_id = id;
+    }
 
-void RProduitCommande::setCommande( Commande* commande )
-{
-    setForeignKey( "commande", commande );
-}
+    void RProduitCommande::setCommande( Commande* commande )
+    {
+        setForeignKey( "commande", commande );
+    }
 
-void RProduitCommande::setProduit( ProduitCommande* produit )
-{
-    setForeignKey( "produit", produit );
-}
+    void RProduitCommande::setProduit( ProduitCommande* produit )
+    {
+        setForeignKey( "produit", produit );
+    }
 
-bool RProduitCommande::save()
-{
-    setId( getCommande()->getCode() + getProduit()->getCode() );
-    return QDjangoModel::save();
+    bool RProduitCommande::save()
+    {
+        setId( getCommande()->getCode() + getProduit()->getCode() );
+        return QDjangoModel::save();
+    }
 }

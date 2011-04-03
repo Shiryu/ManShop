@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ManShop:  Fichier source de model/mstablemodel.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">ManShop&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Logiciel de gestion de magasins</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('d7/d0e/mstablemodel_8h.html','../../');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<h1>model/mstablemodel.h</h1>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef MSTABLEMODEL_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define MSTABLEMODEL_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QAbstractTableModel&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;QMetaProperty&gt;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;qdjango/QDjangoQuerySet.h&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;QDebug&gt;</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;util/util.h&quot;</span>
+<a name="l00010"></a>00010 
+<a name="l00014"></a>00014 <span class="keyword">namespace </span>Model
+<a name="l00015"></a>00015 {
+<a name="l00019"></a>00019     <span class="keyword">template</span> &lt; <span class="keyword">typename</span> S &gt;
+<a name="l00020"></a><a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html">00020</a>     <span class="keyword">class </span><a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html" title="Classe représentant un modèle dérivant de QAbstractTableModel.">MSTableModel</a> : <span class="keyword">public</span> QAbstractTableModel
+<a name="l00021"></a>00021     {
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023     <span class="keyword">private</span>:
+<a name="l00024"></a>00024         QDjangoQuerySet&lt; S &gt; m_table;
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026     <span class="keyword">public</span>:
+<a name="l00027"></a>00027         <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">int</span> NB_CHAMPS_PAR_DEFAUT = 2; <span class="comment">// objectName et pk</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029         <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a30e231f29210374f874984eeb6e0747b" title="Crée un nouveau MSTableModel.">MSTableModel</a>( QObject *parent = 0 );
+<a name="l00030"></a>00030         <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a30e231f29210374f874984eeb6e0747b" title="Crée un nouveau MSTableModel.">MSTableModel</a>( <span class="keyword">const</span> QDjangoQuerySet&lt; S &gt; &amp;table, QObject *parent = 0 );
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032         <span class="keywordtype">void</span> <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#abde72a77c23d0a8dd452c7e8fe67bb37" title="Modifie le QDjangoQuerySet associé au modèle.">setQuerySet</a>( QDjangoQuerySet&lt; S &gt; &amp;table );
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034         <span class="keywordtype">int</span> <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#afed4398e4a30645b9105683ff4f5ee80" title="Méthode virtuelle de la classe QAbstractTableModel redéfinie ici pour donner le nombre de lignes du m...">rowCount</a>( <span class="keyword">const</span> QModelIndex &amp;parent = QModelIndex() ) <span class="keyword">const</span>;
+<a name="l00035"></a>00035         <span class="keywordtype">int</span> <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a1596316183a5ace9d74199da67d49ba5" title="Méthode virtuelle de la classe QAbstractTableModel redéfinie qui donne le nombre de colonnes du modèl...">columnCount</a>( <span class="keyword">const</span> QModelIndex &amp;parent = QModelIndex() ) <span class="keyword">const</span>;
+<a name="l00036"></a>00036         QVariant <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#ac32ed05114cd690b6b01bd0e4125c3dd" title="Renvoie la donnée située à une ligne et une colonne précise du modèle. Le numero de ligne est représe...">data</a>( <span class="keyword">const</span> QModelIndex &amp;index, <span class="keywordtype">int</span> role = Qt::DisplayRole ) <span class="keyword">const</span>;
+<a name="l00037"></a>00037         QVariant <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a381ab9cc46824ee8073e6a2989c1a314" title="Renvoie la chaîne de caractères qui sera affichée en entête de la table à une section donnée...">headerData</a>( <span class="keywordtype">int</span> section, Qt::Orientation orientation, <span class="keywordtype">int</span> role = Qt::DisplayRole ) <span class="keyword">const</span>;
+<a name="l00038"></a>00038     };
+<a name="l00039"></a>00039 
+<a name="l00043"></a>00043     <span class="keyword">template</span> &lt; <span class="keyword">typename</span> S &gt;
+<a name="l00044"></a><a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a30e231f29210374f874984eeb6e0747b">00044</a>     <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a30e231f29210374f874984eeb6e0747b" title="Crée un nouveau MSTableModel.">MSTableModel&lt; S &gt;::MSTableModel</a>( QObject *parent ) : QAbstractTableModel( parent )
+<a name="l00045"></a>00045     {
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     }
+<a name="l00048"></a>00048 
+<a name="l00053"></a>00053     <span class="keyword">template</span> &lt; <span class="keyword">typename</span> S &gt;
+<a name="l00054"></a><a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#aa33f0d847cdd4bcdf2a3733b1bf74a74">00054</a>     <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a30e231f29210374f874984eeb6e0747b" title="Crée un nouveau MSTableModel.">MSTableModel&lt; S &gt;::MSTableModel</a>( <span class="keyword">const</span> QDjangoQuerySet&lt; S &gt; &amp;table, QObject *parent ) :
+<a name="l00055"></a>00055             QAbstractTableModel( parent ),
+<a name="l00056"></a>00056             m_table( table )
+<a name="l00057"></a>00057     {
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059     }
+<a name="l00060"></a>00060 
+<a name="l00064"></a>00064     <span class="keyword">template</span> &lt; <span class="keyword">typename</span> S &gt;
+<a name="l00065"></a><a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#abde72a77c23d0a8dd452c7e8fe67bb37">00065</a>     <span class="keywordtype">void</span> <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#abde72a77c23d0a8dd452c7e8fe67bb37" title="Modifie le QDjangoQuerySet associé au modèle.">MSTableModel&lt; S &gt;::setQuerySet</a>( QDjangoQuerySet&lt; S &gt; &amp;table)
+<a name="l00066"></a>00066     {
+<a name="l00067"></a>00067         m_table = table;
+<a name="l00068"></a>00068     }
+<a name="l00069"></a>00069 
+<a name="l00074"></a>00074     <span class="keyword">template</span> &lt; <span class="keyword">typename</span> S &gt;
+<a name="l00075"></a><a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#afed4398e4a30645b9105683ff4f5ee80">00075</a>     <span class="keywordtype">int</span> <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#afed4398e4a30645b9105683ff4f5ee80" title="Méthode virtuelle de la classe QAbstractTableModel redéfinie ici pour donner le nombre de lignes du m...">MSTableModel&lt; S &gt;::rowCount</a>( <span class="keyword">const</span> QModelIndex &amp;parent )<span class="keyword"> const</span>
+<a name="l00076"></a>00076 <span class="keyword">    </span>{
+<a name="l00077"></a>00077         <span class="keywordflow">return</span> m_table.count();
+<a name="l00078"></a>00078     }
+<a name="l00079"></a>00079 
+<a name="l00083"></a>00083     <span class="keyword">template</span> &lt; <span class="keyword">typename</span> S &gt;
+<a name="l00084"></a><a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a1596316183a5ace9d74199da67d49ba5">00084</a>     <span class="keywordtype">int</span> <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a1596316183a5ace9d74199da67d49ba5" title="Méthode virtuelle de la classe QAbstractTableModel redéfinie qui donne le nombre de colonnes du modèl...">MSTableModel&lt; S &gt;::columnCount</a>( <span class="keyword">const</span> QModelIndex &amp;parent )<span class="keyword"> const</span>
+<a name="l00085"></a>00085 <span class="keyword">    </span>{
+<a name="l00086"></a>00086         S *objet = <span class="keyword">new</span> S();
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088         <span class="keyword">const</span> QMetaObject *metaobjet = objet-&gt;metaObject();
+<a name="l00089"></a>00089         <span class="keywordtype">int</span> n = metaobjet-&gt;propertyCount();
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091         <span class="keywordflow">return</span> n - NB_CHAMPS_PAR_DEFAUT;
+<a name="l00092"></a>00092     }
+<a name="l00093"></a>00093 
+<a name="l00099"></a>00099     <span class="keyword">template</span> &lt; <span class="keyword">typename</span> S &gt;
+<a name="l00100"></a><a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#ac32ed05114cd690b6b01bd0e4125c3dd">00100</a>     QVariant <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#ac32ed05114cd690b6b01bd0e4125c3dd" title="Renvoie la donnée située à une ligne et une colonne précise du modèle. Le numero de ligne est représe...">MSTableModel&lt; S &gt;::data</a>( <span class="keyword">const</span> QModelIndex &amp;index, <span class="keywordtype">int</span> role )<span class="keyword"> const</span>
+<a name="l00101"></a>00101 <span class="keyword">    </span>{
+<a name="l00102"></a>00102         <span class="keywordflow">if</span>( !index.isValid() )
+<a name="l00103"></a>00103             <span class="keywordflow">return</span> QVariant();
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105         <span class="keywordflow">if</span>( index.row() &lt; 0 || index.row() &gt;= rowCount() || index.column() &lt; 0 || index.column() &gt;= columnCount() )
+<a name="l00106"></a>00106             <span class="keywordflow">return</span> QVariant();
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108         <span class="keywordflow">if</span>( role == Qt::DisplayRole )
+<a name="l00109"></a>00109         {
+<a name="l00110"></a>00110             QDjangoQuerySet&lt; S &gt; data = m_table; <span class="comment">// !!! Important, il faut copier m_table dans un autre query_set pour que çà marche</span>
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112             S *objet = data.at( index.row() );
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114             <span class="keyword">const</span> QMetaObject *metaobjet = objet-&gt;metaObject();
+<a name="l00115"></a>00115             QMetaProperty metaprop = metaobjet-&gt;property( index.column() + NB_CHAMPS_PAR_DEFAUT );
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117             <span class="keyword">const</span> <span class="keywordtype">char</span> *nomColonne = metaprop.name();
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119             <span class="keywordflow">return</span> objet-&gt;property( nomColonne );
+<a name="l00120"></a>00120         }
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122         <span class="keywordflow">return</span> QVariant();
+<a name="l00123"></a>00123     }
+<a name="l00124"></a>00124 
+<a name="l00130"></a>00130     <span class="keyword">template</span> &lt; <span class="keyword">typename</span> S &gt;
+<a name="l00131"></a><a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a381ab9cc46824ee8073e6a2989c1a314">00131</a>     QVariant <a class="code" href="../../dd/df1/class_model_1_1_m_s_table_model.html#a381ab9cc46824ee8073e6a2989c1a314" title="Renvoie la chaîne de caractères qui sera affichée en entête de la table à une section donnée...">MSTableModel&lt; S &gt;::headerData</a>( <span class="keywordtype">int</span> section, Qt::Orientation orientation, <span class="keywordtype">int</span> role )<span class="keyword"> const</span>
+<a name="l00132"></a>00132 <span class="keyword">    </span>{
+<a name="l00133"></a>00133         <span class="keywordflow">if</span>( role != Qt::DisplayRole )
+<a name="l00134"></a>00134             <span class="keywordflow">return</span> QVariant();
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136         <span class="keywordflow">if</span>( orientation == Qt::Vertical )
+<a name="l00137"></a>00137             <span class="keywordflow">return</span> section + 1;
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139         <span class="keywordflow">if</span>( orientation == Qt::Horizontal )
+<a name="l00140"></a>00140         {
+<a name="l00141"></a>00141             S *objet = <span class="keyword">new</span> S();
+<a name="l00142"></a>00142             <span class="keyword">const</span> QMetaObject *metaobjet = objet-&gt;metaObject();
+<a name="l00143"></a>00143             QMetaProperty metaprop = metaobjet-&gt;property( section + NB_CHAMPS_PAR_DEFAUT );
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145             <span class="keywordflow">return</span> Util::Util::formater( QString( metaprop.name() ) );
+<a name="l00146"></a>00146         }
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148         <span class="keywordflow">return</span> QVariant();
+<a name="l00149"></a>00149     }
+<a name="l00150"></a>00150 };
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152 <span class="preprocessor">#endif // MSTABLEMODEL_H</span>
+</pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>mstablemodel.h</b>      </li>
+      <li class="footer">Généré le Sun Apr 3 2011 pour ManShop par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
+    </ul>
+  </div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+</body>
+</html>

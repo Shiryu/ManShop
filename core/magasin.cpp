@@ -1,63 +1,66 @@
 #include "magasin.h"
 
-Magasin* Magasin::instance = NULL;
-
-Magasin::Magasin()
+namespace Core
 {
-}
+    Magasin* Magasin::instance = NULL;
 
-Magasin* Magasin::getInstance()
-{
-    if( instance == NULL )
-        instance = new Magasin();
+    Magasin::Magasin()
+    {
+    }
 
-    return instance;
-}
+    Magasin* Magasin::getInstance()
+    {
+        if( instance == NULL )
+            instance = new Magasin();
 
-QString Magasin::getCode() const
-{
-    return m_code;
-}
+        return instance;
+    }
 
-QString Magasin::getNom() const
-{
-    return m_nom;
-}
+    QString Magasin::getCode() const
+    {
+        return m_code;
+    }
 
-QString Magasin::getAdresse() const
-{
-    return m_adresse;
-}
+    QString Magasin::getNom() const
+    {
+        return m_nom;
+    }
 
-void Magasin::setCode( QString code )
-{
-    m_code = code;
-}
+    QString Magasin::getAdresse() const
+    {
+        return m_adresse;
+    }
 
-void Magasin::setNom( QString nom )
-{
-    m_nom = nom;
-}
+    void Magasin::setCode( QString code )
+    {
+        m_code = code;
+    }
 
-void Magasin::setAdresse( QString adresse )
-{
-    m_adresse = adresse;
-}
+    void Magasin::setNom( QString nom )
+    {
+        m_nom = nom;
+    }
 
-bool Magasin::save()
-{
-    QSqlQuery requete;
-    requete.prepare( "INSERT INTO magasin (code, nom, adresse)"
-                     "VALUES (:code, :nom, :adresse) ");
+    void Magasin::setAdresse( QString adresse )
+    {
+        m_adresse = adresse;
+    }
 
-    requete.bindValue( ":code", getCode() );
-    requete.bindValue( ":nom", getNom() );
-    requete.bindValue( ":adresse", getAdresse() );
+    bool Magasin::save()
+    {
+        QSqlQuery requete;
+        requete.prepare( "INSERT INTO magasin (code, nom, adresse)"
+                         "VALUES (:code, :nom, :adresse) ");
 
-    return requete.exec();
-}
+        requete.bindValue( ":code", getCode() );
+        requete.bindValue( ":nom", getNom() );
+        requete.bindValue( ":adresse", getAdresse() );
 
-Magasin::~Magasin()
-{
-    delete instance;
+        return requete.exec();
+    }
+
+    Magasin::~Magasin()
+    {
+        delete instance;
+    }
 }

@@ -3,21 +3,24 @@
 
 #include "produitfournisseur.h"
 
-class ProduitCommande : public ProduitFournisseur
+namespace Core
 {
-   Q_OBJECT
+    class ProduitCommande : public ProduitFournisseur
+    {
+        Q_OBJECT
 
-   Q_PROPERTY( int quantiteCommandee READ getQuantiteCommandee WRITE setQuantiteCommandee )
+        Q_PROPERTY( int quantiteCommandee READ getQuantiteCommandee WRITE setQuantiteCommandee )
 
-private:
-    int m_quantiteCommandee;
+    private:
+                int m_quantiteCommandee;
 
-public:
-    ProduitCommande( QObject *parent = 0 );
+    public:
+        ProduitCommande( QObject *parent = 0 );
 
-    int getQuantiteCommandee() const;
+        int getQuantiteCommandee() const;
 
-    void setQuantiteCommandee( int quantite );
+        void setQuantiteCommandee( int quantite );
+    };
 };
 
 #endif // PRODUITCOMMANDE_H

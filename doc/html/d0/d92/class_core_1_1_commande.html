@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ManShop: Référence de la classe Core::Commande</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">ManShop&#160;<span id="projectnumber">1.0</span></div>
+   <div id="projectbrief">Logiciel de gestion de magasins</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="../../classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="../../inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="../../functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('d0/d92/class_core_1_1_commande.html','../../');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Types publics</a> &#124;
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#properties">Propriétés</a>  </div>
+  <div class="headertitle">
+<h1>Référence de la classe Core::Commande</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="Core::Commande" --><div class="dynheader">
+Graphe de collaboration de Core::Commande:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/da3/class_core_1_1_commande__coll__graph.png" border="0" usemap="#_core_1_1_commande_coll__map" alt="Collaboration graph"/></div>
+<map name="_core_1_1_commande_coll__map" id="_core_1_1_commande_coll__map">
+<area shape="rect" id="node2" href="../../dd/d46/class_core_1_1_fournisseur.html" title="Core::Fournisseur" alt="" coords="5,5,131,35"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">légende</a>]</span></center></div>
+
+<p><a href="../../d1/ddc/class_core_1_1_commande-members.html">Liste de tous les membres</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Types publics</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>Etat</b> { <b>EnAttente</b>, 
+<b>EnAttenteLivraison</b>, 
+<b>LivraisonPartielle</b>, 
+<b>LivraisonTotale</b>
+ }</td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64cb1834d666c1ec9f6cb0f11b5f9c78"></a><!-- doxytag: member="Core::Commande::Commande" ref="a64cb1834d666c1ec9f6cb0f11b5f9c78" args="(QObject *parent=0)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>Commande</b> (QObject *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad24bf970d58e268642a102650698ba6e"></a><!-- doxytag: member="Core::Commande::Commande" ref="ad24bf970d58e268642a102650698ba6e" args="(QString code, QObject *parent=0)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>Commande</b> (QString code, QObject *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9219981f0c67b8627924c422c968aa6"></a><!-- doxytag: member="Core::Commande::Commande" ref="ad9219981f0c67b8627924c422c968aa6" args="(QString code, QDate date, QObject *parent=0)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>Commande</b> (QString code, QDate date, QObject *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af17d69972864c85cf980845772bc737f"></a><!-- doxytag: member="Core::Commande::getCode" ref="af17d69972864c85cf980845772bc737f" args="() const " -->
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>getCode</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89b8b550e9eeea14e5c7c81e06bf485a"></a><!-- doxytag: member="Core::Commande::getDate" ref="a89b8b550e9eeea14e5c7c81e06bf485a" args="() const " -->
+QDate&#160;</td><td class="memItemRight" valign="bottom"><b>getDate</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d2b4980b3472ac81e91be956a6ac537"></a><!-- doxytag: member="Core::Commande::getEtat" ref="a3d2b4980b3472ac81e91be956a6ac537" args="() const " -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getEtat</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b86b2723f049285eef734c72585e704"></a><!-- doxytag: member="Core::Commande::getFournisseur" ref="a8b86b2723f049285eef734c72585e704" args="() const " -->
+<a class="el" href="../../dd/d46/class_core_1_1_fournisseur.html">Fournisseur</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getFournisseur</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81e784a1aedef144d76642d318b74b71"></a><!-- doxytag: member="Core::Commande::setCode" ref="a81e784a1aedef144d76642d318b74b71" args="(QString code)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setCode</b> (QString code)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af031ef6f31adc61a5f3377eda393de75"></a><!-- doxytag: member="Core::Commande::setDate" ref="af031ef6f31adc61a5f3377eda393de75" args="(QDate date)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setDate</b> (QDate date)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af52344f6b446455c79ab3a6e9cb9b88e"></a><!-- doxytag: member="Core::Commande::setEtat" ref="af52344f6b446455c79ab3a6e9cb9b88e" args="(int etat)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setEtat</b> (int etat)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92c4d0da3e627176e5899154d8cd73f8"></a><!-- doxytag: member="Core::Commande::setFournisseur" ref="a92c4d0da3e627176e5899154d8cd73f8" args="(Fournisseur *fournisseur)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setFournisseur</b> (<a class="el" href="../../dd/d46/class_core_1_1_fournisseur.html">Fournisseur</a> *fournisseur)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9788565cf3467dd64869b684a92ef096"></a><!-- doxytag: member="Core::Commande::getRelation" ref="a9788565cf3467dd64869b684a92ef096" args="() const " -->
+<a class="el" href="../../dd/d46/class_core_1_1_fournisseur.html">Fournisseur</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRelation</b> () const </td></tr>
+<tr><td colspan="2"><h2><a name="properties"></a>
+Propriétés</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af012ec6904b174e6487c279989c3e622"></a><!-- doxytag: member="Core::Commande::code" ref="af012ec6904b174e6487c279989c3e622" args="" -->
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>code</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18973533ff7bddd4dd2bc047cc93a738"></a><!-- doxytag: member="Core::Commande::date" ref="a18973533ff7bddd4dd2bc047cc93a738" args="" -->
+QDate&#160;</td><td class="memItemRight" valign="bottom"><b>date</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6db42c7e148b1ef83a3d2988814dc547"></a><!-- doxytag: member="Core::Commande::etat" ref="a6db42c7e148b1ef83a3d2988814dc547" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>etat</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f6d336f1eab3a0471ddea678d106e00"></a><!-- doxytag: member="Core::Commande::fournisseur" ref="a1f6d336f1eab3a0471ddea678d106e00" args="" -->
+<a class="el" href="../../dd/d46/class_core_1_1_fournisseur.html">Fournisseur</a>&#160;</td><td class="memItemRight" valign="bottom"><b>fournisseur</b></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<div class="textblock">
+<p>Définition à la ligne <a class="el" href="../../d3/d0d/commande_8h_source.html#l00009">9</a> du fichier <a class="el" href="../../d3/d0d/commande_8h_source.html">commande.h</a>.</p>
+</div><hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>core/<a class="el" href="../../d3/d0d/commande_8h_source.html">commande.h</a></li>
+<li>core/<a class="el" href="../../d6/dbd/commande_8cpp_source.html">commande.cpp</a></li>
+</ul>
+</div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="../../d0/d35/namespace_core.html">Core</a>      </li>
+      <li class="navelem"><a class="el" href="../../d0/d92/class_core_1_1_commande.html">Commande</a>      </li>
+      <li class="footer">Généré le Sun Apr 3 2011 pour ManShop par&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
+    </ul>
+  </div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+</body>
+</html>

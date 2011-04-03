@@ -1,0 +1,223 @@
+\hypertarget{class_model_1_1_m_s_table_model}{
+\section{Référence de la classe Model::MSTableModel$<$ S $>$ (modèle)}
+\label{dd/df1/class_model_1_1_m_s_table_model}\index{Model::MSTableModel@{Model::MSTableModel}}
+}
+
+
+Classe représentant un modèle dérivant de QAbstractTableModel.  
+
+
+
+
+{\ttfamily \#include $<$mstablemodel.h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_model_1_1_m_s_table_model_a30e231f29210374f874984eeb6e0747b}{MSTableModel} (QObject $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Crée un nouveau \hyperlink{class_model_1_1_m_s_table_model}{MSTableModel}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_model_1_1_m_s_table_model_aa33f0d847cdd4bcdf2a3733b1bf74a74}{MSTableModel} (const QDjangoQuerySet$<$ S $>$ \&table, QObject $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Crée un nouveau \hyperlink{class_model_1_1_m_s_table_model}{MSTableModel}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_model_1_1_m_s_table_model_abde72a77c23d0a8dd452c7e8fe67bb37}{setQuerySet} (QDjangoQuerySet$<$ S $>$ \&table)
+\begin{DoxyCompactList}\small\item\em Modifie le QDjangoQuerySet associé au modèle. \item\end{DoxyCompactList}\item 
+int \hyperlink{class_model_1_1_m_s_table_model_afed4398e4a30645b9105683ff4f5ee80}{rowCount} (const QModelIndex \&parent=QModelIndex()) const 
+\begin{DoxyCompactList}\small\item\em Méthode virtuelle de la classe QAbstractTableModel redéfinie ici pour donner le nombre de lignes du modèle. \item\end{DoxyCompactList}\item 
+int \hyperlink{class_model_1_1_m_s_table_model_a1596316183a5ace9d74199da67d49ba5}{columnCount} (const QModelIndex \&parent=QModelIndex()) const 
+\begin{DoxyCompactList}\small\item\em Méthode virtuelle de la classe QAbstractTableModel redéfinie qui donne le nombre de colonnes du modèle. \item\end{DoxyCompactList}\item 
+QVariant \hyperlink{class_model_1_1_m_s_table_model_ac32ed05114cd690b6b01bd0e4125c3dd}{data} (const QModelIndex \&index, int role=Qt::DisplayRole) const 
+\begin{DoxyCompactList}\small\item\em Renvoie la donnée située à une ligne et une colonne précise du modèle. Le numero de ligne est représenté par index.row() et le numero de colonne par index.column() \item\end{DoxyCompactList}\item 
+QVariant \hyperlink{class_model_1_1_m_s_table_model_a381ab9cc46824ee8073e6a2989c1a314}{headerData} (int section, Qt::Orientation orientation, int role=Qt::DisplayRole) const 
+\begin{DoxyCompactList}\small\item\em Renvoie la chaîne de caractères qui sera affichée en entête de la table à une section donnée. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs publics statiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_model_1_1_m_s_table_model_aaa19a5fe7e969dcd93024d59ab912ceb}{
+static const int {\bfseries NB\_\-CHAMPS\_\-PAR\_\-DEFAUT} = 2}
+\label{dd/df1/class_model_1_1_m_s_table_model_aaa19a5fe7e969dcd93024d59ab912ceb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\subsubsection*{template$<$typename S$>$ class Model::MSTableModel$<$ S $>$}
+
+Classe représentant un modèle dérivant de QAbstractTableModel. 
+
+Définition à la ligne 20 du fichier mstablemodel.h.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_model_1_1_m_s_table_model_a30e231f29210374f874984eeb6e0747b}{
+\index{Model::MSTableModel@{Model::MSTableModel}!MSTableModel@{MSTableModel}}
+\index{MSTableModel@{MSTableModel}!Model::MSTableModel@{Model::MSTableModel}}
+\subsubsection[{MSTableModel}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S $>$ {\bf Model::MSTableModel}$<$ S $>$::{\bf MSTableModel} (
+\begin{DoxyParamCaption}
+\item[{QObject $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{dd/df1/class_model_1_1_m_s_table_model_a30e231f29210374f874984eeb6e0747b}
+
+
+Crée un nouveau \hyperlink{class_model_1_1_m_s_table_model}{MSTableModel}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & L'objet parent \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 44 du fichier mstablemodel.h.
+
+\hypertarget{class_model_1_1_m_s_table_model_aa33f0d847cdd4bcdf2a3733b1bf74a74}{
+\index{Model::MSTableModel@{Model::MSTableModel}!MSTableModel@{MSTableModel}}
+\index{MSTableModel@{MSTableModel}!Model::MSTableModel@{Model::MSTableModel}}
+\subsubsection[{MSTableModel}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S $>$ {\bf Model::MSTableModel}$<$ S $>$::{\bf MSTableModel} (
+\begin{DoxyParamCaption}
+\item[{const QDjangoQuerySet$<$ S $>$ \&}]{table, }
+\item[{QObject $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{dd/df1/class_model_1_1_m_s_table_model_aa33f0d847cdd4bcdf2a3733b1bf74a74}
+
+
+Crée un nouveau \hyperlink{class_model_1_1_m_s_table_model}{MSTableModel}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em table} & Le QDjangoQuerySet représentant la structure sous-\/jacente du modèle \\
+\hline
+{\em parent} & L'objet parent \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 54 du fichier mstablemodel.h.
+
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_model_1_1_m_s_table_model_a1596316183a5ace9d74199da67d49ba5}{
+\index{Model::MSTableModel@{Model::MSTableModel}!columnCount@{columnCount}}
+\index{columnCount@{columnCount}!Model::MSTableModel@{Model::MSTableModel}}
+\subsubsection[{columnCount}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S $>$ int {\bf Model::MSTableModel}$<$ S $>$::columnCount (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{parent = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+) const}}
+\label{dd/df1/class_model_1_1_m_s_table_model_a1596316183a5ace9d74199da67d49ba5}
+
+
+Méthode virtuelle de la classe QAbstractTableModel redéfinie qui donne le nombre de colonnes du modèle. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & Le QModelIndex parent (un QModelIndex invalide) \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 84 du fichier mstablemodel.h.
+
+\hypertarget{class_model_1_1_m_s_table_model_ac32ed05114cd690b6b01bd0e4125c3dd}{
+\index{Model::MSTableModel@{Model::MSTableModel}!data@{data}}
+\index{data@{data}!Model::MSTableModel@{Model::MSTableModel}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S $>$ QVariant {\bf Model::MSTableModel}$<$ S $>$::data (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{index, }
+\item[{int}]{role = {\ttfamily Qt::DisplayRole}}
+\end{DoxyParamCaption}
+) const}}
+\label{dd/df1/class_model_1_1_m_s_table_model_ac32ed05114cd690b6b01bd0e4125c3dd}
+
+
+Renvoie la donnée située à une ligne et une colonne précise du modèle. Le numero de ligne est représenté par index.row() et le numero de colonne par index.column() 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em index} & Le QModelIndex permettant d'avoir accès aux numeros de ligne et colonne de la donnée à récupérer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+QVariant La donnée située à l'index ou un QVariant invalide si la donnée ne peut être trouvée 
+\end{DoxyReturn}
+
+
+Définition à la ligne 100 du fichier mstablemodel.h.
+
+\hypertarget{class_model_1_1_m_s_table_model_a381ab9cc46824ee8073e6a2989c1a314}{
+\index{Model::MSTableModel@{Model::MSTableModel}!headerData@{headerData}}
+\index{headerData@{headerData}!Model::MSTableModel@{Model::MSTableModel}}
+\subsubsection[{headerData}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S $>$ QVariant {\bf Model::MSTableModel}$<$ S $>$::headerData (
+\begin{DoxyParamCaption}
+\item[{int}]{section, }
+\item[{Qt::Orientation}]{orientation, }
+\item[{int}]{role = {\ttfamily Qt::DisplayRole}}
+\end{DoxyParamCaption}
+) const}}
+\label{dd/df1/class_model_1_1_m_s_table_model_a381ab9cc46824ee8073e6a2989c1a314}
+
+
+Renvoie la chaîne de caractères qui sera affichée en entête de la table à une section donnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em section} & La section de la table dont on cherche l'entête \\
+\hline
+{\em orientation} & L'orientation de la table (Qt::Vertical ou Qt::Horizontal)  role Le rôle de la chaîne, sera-\/t-\/elle affichée en entête (Qt::DisplayRole) ou en tooltip (Qt::Tooltip), etc. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 131 du fichier mstablemodel.h.
+
+\hypertarget{class_model_1_1_m_s_table_model_afed4398e4a30645b9105683ff4f5ee80}{
+\index{Model::MSTableModel@{Model::MSTableModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!Model::MSTableModel@{Model::MSTableModel}}
+\subsubsection[{rowCount}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S $>$ int {\bf Model::MSTableModel}$<$ S $>$::rowCount (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{parent = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+) const}}
+\label{dd/df1/class_model_1_1_m_s_table_model_afed4398e4a30645b9105683ff4f5ee80}
+
+
+Méthode virtuelle de la classe QAbstractTableModel redéfinie ici pour donner le nombre de lignes du modèle. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & Le QModelIndex parent (dans ce cas, c'est un QModelIndex invalide) \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 75 du fichier mstablemodel.h.
+
+\hypertarget{class_model_1_1_m_s_table_model_abde72a77c23d0a8dd452c7e8fe67bb37}{
+\index{Model::MSTableModel@{Model::MSTableModel}!setQuerySet@{setQuerySet}}
+\index{setQuerySet@{setQuerySet}!Model::MSTableModel@{Model::MSTableModel}}
+\subsubsection[{setQuerySet}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S $>$ void {\bf Model::MSTableModel}$<$ S $>$::setQuerySet (
+\begin{DoxyParamCaption}
+\item[{QDjangoQuerySet$<$ S $>$ \&}]{table}
+\end{DoxyParamCaption}
+)}}
+\label{dd/df1/class_model_1_1_m_s_table_model_abde72a77c23d0a8dd452c7e8fe67bb37}
+
+
+Modifie le QDjangoQuerySet associé au modèle. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em table} & Le QDjangoQuerySet qui sera associé au modèle \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 65 du fichier mstablemodel.h.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant :\begin{DoxyCompactItemize}
+\item 
+model/mstablemodel.h\end{DoxyCompactItemize}

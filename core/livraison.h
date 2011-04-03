@@ -3,34 +3,39 @@
 
 #include "commande.h"
 
-class Livraison : public QDjangoModel
+namespace Core
 {
-    Q_OBJECT
+    class Livraison : public QDjangoModel
+    {
+        Q_OBJECT
 
-    Q_PROPERTY( QString code READ getCode WRITE setCode )
-    Q_PROPERTY( QDate date READ getDate WRITE setDate )
-    Q_PROPERTY( Commande* commande READ getCommande WRITE setCommande )
+        Q_PROPERTY( QString code READ getCode WRITE setCode )
+                Q_PROPERTY( QDate date READ getDate WRITE setDate )
+                Q_PROPERTY( Commande* commande READ getCommande WRITE setCommande )
 
-    Q_CLASSINFO( "code", "primary_key=true" )
+                Q_CLASSINFO( "code", "primary_key=true" )
 
-private:
-    QString m_code;
-    QDate m_date;
+    private:
+                QString m_code;
+        QDate m_date;
 
-public:
-    Livraison( QObject *parent = 0 );
-    Livraison( QString code, QObject *parent = 0 );
-    Livraison( QString code, QDate date, QObject *parent = 0 );
+        Commande *commande;
 
-    QString getCode() const;
-    QDate getDate() const;
-    Commande* getCommande() const;
+    public:
+        Livraison( QObject *parent = 0 );
+        Livraison( QString code, QObject *parent = 0 );
+        Livraison( QString code, QDate date, QObject *parent = 0 );
 
-    void setCode( QString code );
-    void setDate( QDate date );
-    void setCommande( Commande *commande );
+        QString getCode() const;
+        QDate getDate() const;
+        Commande* getCommande() const;
 
-    Commande* getRelation() const { return getCommande(); }
+        void setCode( QString code );
+        void setDate( QDate date );
+        void setCommande( Commande *commande );
+
+        Commande* getRelation() const { return getCommande(); }
+    };
 };
 
 #endif // LIVRAISON_H

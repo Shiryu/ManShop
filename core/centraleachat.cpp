@@ -1,59 +1,62 @@
 #include "centraleachat.h"
 
-CentraleAchat* CentraleAchat::instance = NULL;
-
-CentraleAchat::CentraleAchat()
+namespace Core
 {
-}
+    CentraleAchat* CentraleAchat::instance = NULL;
 
-CentraleAchat* CentraleAchat::getInstance()
-{
-    if(instance == NULL)
-        instance = new CentraleAchat();
+    CentraleAchat::CentraleAchat()
+    {
+    }
 
-    return instance;
-}
+    CentraleAchat* CentraleAchat::getInstance()
+    {
+        if(instance == NULL)
+            instance = new CentraleAchat();
 
-QString CentraleAchat::getCode() const
-{
-    return m_code;
-}
+        return instance;
+    }
 
-QString CentraleAchat::getNom() const
-{
-    return m_nom;
-}
+    QString CentraleAchat::getCode() const
+    {
+        return m_code;
+    }
 
-QString CentraleAchat::getAdresse() const
-{
-    return m_adresse;
-}
+    QString CentraleAchat::getNom() const
+    {
+        return m_nom;
+    }
 
-void CentraleAchat::setCode( QString code )
-{
-    m_code = code;
-}
+    QString CentraleAchat::getAdresse() const
+    {
+        return m_adresse;
+    }
 
-void CentraleAchat::setNom( QString nom )
-{
-    m_nom = nom;
-}
+    void CentraleAchat::setCode( QString code )
+    {
+        m_code = code;
+    }
 
-void CentraleAchat::setAdresse( QString adresse )
-{
-    m_adresse = adresse;
-}
+    void CentraleAchat::setNom( QString nom )
+    {
+        m_nom = nom;
+    }
 
-bool CentraleAchat::save()
-{
-    QSqlQuery requete;
+    void CentraleAchat::setAdresse( QString adresse )
+    {
+        m_adresse = adresse;
+    }
 
-    requete.prepare( "INSERT INTO centraleachat (code, nom, adresse) "
-                     "VALUES (:code, :nom, :adresse )" );
+    bool CentraleAchat::save()
+    {
+        QSqlQuery requete;
 
-    requete.bindValue( ":code", getCode() );
-    requete.bindValue( ":nom", getNom() );
-    requete.bindValue( ":adresse", getAdresse() );
+        requete.prepare( "INSERT INTO centraleachat (code, nom, adresse) "
+                         "VALUES (:code, :nom, :adresse )" );
 
-    return requete.exec();
+        requete.bindValue( ":code", getCode() );
+        requete.bindValue( ":nom", getNom() );
+        requete.bindValue( ":adresse", getAdresse() );
+
+        return requete.exec();
+    }
 }

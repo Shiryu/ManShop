@@ -1,0 +1,112 @@
+\hypertarget{class_commande}{
+\section{Commande Class Reference}
+\label{class_commande}\index{Commande@{Commande}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Etat} \{ {\bfseries EnAttente}, 
+{\bfseries EnAttenteLivraison}, 
+{\bfseries LivraisonPartielle}, 
+{\bfseries LivraisonTotale}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_commande_ad68950904e104bde06bf10569871873f}{
+{\bfseries Commande} (QObject $\ast$parent=0)}
+\label{class_commande_ad68950904e104bde06bf10569871873f}
+
+\item 
+\hypertarget{class_commande_a6a041d58081e667a7894c0be35f09792}{
+{\bfseries Commande} (QString code, QObject $\ast$parent=0)}
+\label{class_commande_a6a041d58081e667a7894c0be35f09792}
+
+\item 
+\hypertarget{class_commande_a9133e616904f1de107284a92d0dcd1ec}{
+{\bfseries Commande} (QString code, QDate date, QObject $\ast$parent=0)}
+\label{class_commande_a9133e616904f1de107284a92d0dcd1ec}
+
+\item 
+\hypertarget{class_commande_a15435c7ea66fb31a2a688ccb42db1532}{
+QString {\bfseries getCode} () const }
+\label{class_commande_a15435c7ea66fb31a2a688ccb42db1532}
+
+\item 
+\hypertarget{class_commande_ab637d39c6cd62a8c35ab4d935b3e8be8}{
+QDate {\bfseries getDate} () const }
+\label{class_commande_ab637d39c6cd62a8c35ab4d935b3e8be8}
+
+\item 
+\hypertarget{class_commande_aa71c200197a231744d161b01d4c4cd73}{
+int {\bfseries getEtat} () const }
+\label{class_commande_aa71c200197a231744d161b01d4c4cd73}
+
+\item 
+\hypertarget{class_commande_a22acedca2cfbfe5ac3350d119345bba9}{
+\hyperlink{class_fournisseur}{Fournisseur} $\ast$ {\bfseries getFournisseur} () const }
+\label{class_commande_a22acedca2cfbfe5ac3350d119345bba9}
+
+\item 
+\hypertarget{class_commande_a154042e09feeb5fc11d2dae893481e73}{
+void {\bfseries setCode} (QString code)}
+\label{class_commande_a154042e09feeb5fc11d2dae893481e73}
+
+\item 
+\hypertarget{class_commande_a0b3188df4367fd7366e82415c8b1f8c1}{
+void {\bfseries setDate} (QDate date)}
+\label{class_commande_a0b3188df4367fd7366e82415c8b1f8c1}
+
+\item 
+\hypertarget{class_commande_ab6f80b3c1977fff775a8e56bc7dc700f}{
+void {\bfseries setEtat} (int etat)}
+\label{class_commande_ab6f80b3c1977fff775a8e56bc7dc700f}
+
+\item 
+\hypertarget{class_commande_a215f27c225512c97b273102a04692493}{
+void {\bfseries setFournisseur} (\hyperlink{class_fournisseur}{Fournisseur} $\ast$fournisseur)}
+\label{class_commande_a215f27c225512c97b273102a04692493}
+
+\item 
+\hypertarget{class_commande_a1a3e9d88a79e02a7e147a142d0775b06}{
+\hyperlink{class_fournisseur}{Fournisseur} $\ast$ {\bfseries getRelation} () const }
+\label{class_commande_a1a3e9d88a79e02a7e147a142d0775b06}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_commande_a2ecb8ace957493fa223e1e768e85bda7}{
+QString {\bfseries code}}
+\label{class_commande_a2ecb8ace957493fa223e1e768e85bda7}
+
+\item 
+\hypertarget{class_commande_a15b8137e1c75757be341481e8668449f}{
+QDate {\bfseries date}}
+\label{class_commande_a15b8137e1c75757be341481e8668449f}
+
+\item 
+\hypertarget{class_commande_a5794dadb5575bae3350d8cfd60b17400}{
+int {\bfseries etat}}
+\label{class_commande_a5794dadb5575bae3350d8cfd60b17400}
+
+\item 
+\hypertarget{class_commande_a4d64d1201bc40fb954d208384388b21e}{
+\hyperlink{class_fournisseur}{Fournisseur} {\bfseries fournisseur}}
+\label{class_commande_a4d64d1201bc40fb954d208384388b21e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file commande.h.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+core/commande.h\item 
+core/commande.cpp\end{DoxyCompactItemize}

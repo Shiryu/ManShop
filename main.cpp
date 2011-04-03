@@ -5,22 +5,34 @@
 #include "model/mstablemodel.h"
 #include "model/msrelationaltablemodel.h"
 
+using namespace Core;
+using namespace Model;
+
 int main( int argc, char *argv[] )
 {
     QApplication a( argc, argv );
 
     Connection::getInstance()->connecter();
 
-    /*QDjangoQuerySet< ProduitStock > produits;
+    ProduitStock *p = new ProduitStock();
+    p->setCode( "hp1" );
+    p->setConstructeur( "hp" );
+    p->setNom( "laptop 6510b" );
+    p->setDescription( "ordinateur portable hp" );
+    p->setPrixUnitaire( 2650.25 );
+    p->setQuantite( 6 );
+    p->save();
+
+    QDjangoQuerySet< ProduitStock > produits;
 
     MSTableModel< ProduitStock > *model = new MSTableModel< ProduitStock >();
     model->setQuerySet( produits );
 
     QTableView *view = new QTableView();
     view->setModel( model );
-    view->show();*/
+    view->show();
 
-    QDjangoQuerySet< Catalogue > catalogues;
+    /*QDjangoQuerySet< Catalogue > catalogues;
     QDjangoQuerySet< Fournisseur > fournisseurs;
 
     MSRelationalTableModel< Catalogue, Fournisseur > *model = new MSRelationalTableModel< Catalogue, Fournisseur >;
@@ -30,7 +42,7 @@ int main( int argc, char *argv[] )
 
     QTableView *view = new QTableView();
     view->setModel( model );
-    view->show();
+    view->show();*/
 
 
     return a.exec();

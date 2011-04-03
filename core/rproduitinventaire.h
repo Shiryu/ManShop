@@ -4,32 +4,38 @@
 #include "produitinventaire.h"
 #include "inventaire.h"
 
-class RProduitInventaire : public QDjangoModel
+namespace Core
 {
-    Q_OBJECT
+    class RProduitInventaire : public QDjangoModel
+    {
+        Q_OBJECT
 
-    Q_PROPERTY( QString id READ getId WRITE setId )
-    Q_PROPERTY( Inventaire* inventaire READ getInventaire WRITE setInventaire )
-    Q_PROPERTY( ProduitInventaire* produit READ getProduit WRITE setProduit )
+        Q_PROPERTY( QString id READ getId WRITE setId )
+                Q_PROPERTY( Inventaire* inventaire READ getInventaire WRITE setInventaire )
+                Q_PROPERTY( ProduitInventaire* produit READ getProduit WRITE setProduit )
 
-    Q_CLASSINFO( "id", "primary_key=true" )
+                Q_CLASSINFO( "id", "primary_key=true" )
 
-private:
-    QString m_id;
+    private:
+                QString m_id;
 
-    QString getId() const;
-    void setId( QString id );
+        Inventaire *inventaire;
+        ProduitInventaire *produit;
 
-public:
-    RProduitInventaire( QObject *parent = 0 );
+        QString getId() const;
+        void setId( QString id );
 
-    Inventaire* getInventaire() const;
-    ProduitInventaire* getProduit() const;
+    public:
+        RProduitInventaire( QObject *parent = 0 );
 
-    void setInventaire( Inventaire* inventaire );
-    void setProduit( ProduitInventaire* produit );
+        Inventaire* getInventaire() const;
+        ProduitInventaire* getProduit() const;
 
-    bool save();
+        void setInventaire( Inventaire* inventaire );
+        void setProduit( ProduitInventaire* produit );
+
+        bool save();
+    };
 };
 
 #endif // RPRODUITINVENTAIRE_H

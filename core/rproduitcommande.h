@@ -4,32 +4,38 @@
 #include "produitcommande.h"
 #include "commande.h"
 
-class RProduitCommande : public QDjangoModel
+namespace Core
 {
-    Q_OBJECT
+    class RProduitCommande : public QDjangoModel
+    {
+        Q_OBJECT
 
-    Q_PROPERTY( QString id READ getId WRITE setId )
-    Q_PROPERTY( Commande* commande READ getCommande WRITE setCommande )
-    Q_PROPERTY( ProduitCommande* produit READ getProduit WRITE setProduit )
+        Q_PROPERTY( QString id READ getId WRITE setId )
+        Q_PROPERTY( Commande* commande READ getCommande WRITE setCommande )
+        Q_PROPERTY( ProduitCommande* produit READ getProduit WRITE setProduit )
 
-    Q_CLASSINFO( "id", "primary_key=true" )
+        Q_CLASSINFO( "id", "primary_key=true" )
 
-private:
-    QString m_id;
+    private:
+        QString m_id;
 
-    QString getId() const;
-    void setId( QString id );
+        Commande *commande;
+        ProduitCommande *produit;
 
-public:
-    RProduitCommande( QObject *parent = 0 );
+        QString getId() const;
+        void setId( QString id );
 
-    Commande* getCommande() const;
-    ProduitCommande* getProduit() const;
+    public:
+        RProduitCommande( QObject *parent = 0 );
 
-    void setCommande( Commande* commande );
-    void setProduit( ProduitCommande* produit);
+        Commande* getCommande() const;
+        ProduitCommande* getProduit() const;
 
-    bool save();
+        void setCommande( Commande* commande );
+        void setProduit( ProduitCommande* produit);
+
+        bool save();
+    };
 };
 
 #endif // RPRODUITCOMMANDE_H

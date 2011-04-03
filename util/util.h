@@ -4,33 +4,36 @@
 #include <QString>
 #include <QDebug>
 
-class Util
+namespace Util
 {
-private:
-    Util() { }
-
-public:
-    inline static QString formater( QString chaine )
+    class Util
     {
-        QString resultat;
+    private:
+        Util() { }
 
-        resultat[ 0 ] = chaine[ 0 ].toUpper();
-
-        int position_espace = -1;
-
-        for( int i = 1; i < chaine.size(); ++i )
+    public:
+        inline static QString formater( QString chaine )
         {
-            resultat[ i ] = chaine[ i ];
+            QString resultat;
 
-            if( chaine[ i ].isUpper() )
-                position_espace = i;
+            resultat[ 0 ] = chaine[ 0 ].toUpper();
+
+            int position_espace = -1;
+
+            for( int i = 1; i < chaine.size(); ++i )
+            {
+                resultat[ i ] = chaine[ i ];
+
+                if( chaine[ i ].isUpper() )
+                    position_espace = i;
+            }
+
+            if( position_espace != -1 )
+                resultat.insert( position_espace, QString( " " ) );
+
+            return resultat;
         }
-
-        if( position_espace != -1 )
-            resultat.insert( position_espace, QString( " " ) );
-
-        return resultat;
-    }
+    };
 };
 
 #endif // UTIL_H

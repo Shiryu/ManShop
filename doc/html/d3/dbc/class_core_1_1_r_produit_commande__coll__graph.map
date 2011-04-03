@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$dc/d80/class_core_1_1_produit_commande.html" title="Core::ProduitCommande" alt="" coords="5,181,171,211"/>
+<area shape="rect" id="node4" href="$d6/db3/class_core_1_1_produit_fournisseur.html" title="Core::ProduitFournisseur" alt="" coords="5,85,171,115"/>
+<area shape="rect" id="node6" href="$d3/d87/class_core_1_1_produit.html" title="Core::Produit" alt="" coords="39,5,137,35"/>
+<area shape="rect" id="node8" href="$d0/d92/class_core_1_1_commande.html" title="Core::Commande" alt="" coords="195,181,320,211"/>
+<area shape="rect" id="node10" href="$dd/d46/class_core_1_1_fournisseur.html" title="Core::Fournisseur" alt="" coords="195,85,320,115"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d7/d25/class_produit_fournisseur.html" title="ProduitFournisseur" alt="" coords="5,83,136,112"/>
+<area shape="rect" id="node7" href="$d2/d66/class_produit_inventaire.html" title="ProduitInventaire" alt="" coords="160,83,280,112"/>
+<area shape="rect" id="node9" href="$d2/dc4/class_produit_stock.html" title="ProduitStock" alt="" coords="304,83,400,112"/>
+<area shape="rect" id="node11" href="$de/da9/class_produit_vente.html" title="ProduitVente" alt="" coords="424,83,520,112"/>
+<area shape="rect" id="node5" href="$db/d8b/class_produit_commande.html" title="ProduitCommande" alt="" coords="5,160,136,189"/>
+</map>

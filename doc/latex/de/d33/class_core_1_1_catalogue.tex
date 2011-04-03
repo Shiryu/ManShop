@@ -1,0 +1,287 @@
+\hypertarget{class_core_1_1_catalogue}{
+\section{Référence de la classe Core::Catalogue}
+\label{de/d33/class_core_1_1_catalogue}\index{Core::Catalogue@{Core::Catalogue}}
+}
+
+
+Classe représentant un catalogue.  
+
+
+
+
+{\ttfamily \#include $<$catalogue.h$>$}
+
+
+
+Graphe de collaboration de Core::Catalogue:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{de/d4c/class_core_1_1_catalogue__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_core_1_1_catalogue_a1563d794f593a4978785d4e784628123}{Catalogue} (QObject $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Crée un nouveau \hyperlink{class_core_1_1_catalogue}{Catalogue}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_core_1_1_catalogue_a56f8f6931050a2592ebc2b2cb3f5ef1d}{Catalogue} (QString code, QObject $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Crée un nouveau \hyperlink{class_core_1_1_catalogue}{Catalogue}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_core_1_1_catalogue_a5a96958fe38e82024175a2dbb40d7d29}{Catalogue} (QString code, QDate dateEnregistrement, QObject $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Crée un nouveau \hyperlink{class_core_1_1_catalogue}{Catalogue}. \item\end{DoxyCompactList}\item 
+QString \hyperlink{class_core_1_1_catalogue_a6dcea2e7862042cd9f05dae894d47a7c}{getCode} () const 
+\begin{DoxyCompactList}\small\item\em Renvoie le code du catalogue. \item\end{DoxyCompactList}\item 
+QDate \hyperlink{class_core_1_1_catalogue_ac60f6d1630d03598e313ba497ab18f56}{getDateEnregistrement} () const 
+\begin{DoxyCompactList}\small\item\em Renvoie la date à laquelle le catalogue a été enregistré \item\end{DoxyCompactList}\item 
+\hyperlink{class_core_1_1_fournisseur}{Fournisseur} $\ast$ \hyperlink{class_core_1_1_catalogue_aa8d603a01cab36e2be56a2f10219b56c}{getFournisseur} () const 
+\begin{DoxyCompactList}\small\item\em Renvoie l'objet \hyperlink{class_core_1_1_fournisseur}{Fournisseur} correspondant au fournisseur dont émane le catalogue. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_core_1_1_catalogue_a065f70f6b69ff02593e0be7813142be4}{setCode} (QString code)
+\begin{DoxyCompactList}\small\item\em Modifie le code du catalogue. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_core_1_1_catalogue_a722b8c534479e7aad59a7d425250617c}{setDateEnregistrement} (QDate dateEnregistrement)
+\begin{DoxyCompactList}\small\item\em Modifie la date d'enregistrement du catalogue. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_core_1_1_catalogue_a5f1c6cd886338385a95ce8105dfd48e1}{setFournisseur} (\hyperlink{class_core_1_1_fournisseur}{Fournisseur} $\ast$fournisseur)
+\begin{DoxyCompactList}\small\item\em Modifie le fournisseur associé au catalogue. \item\end{DoxyCompactList}\item 
+\hypertarget{class_core_1_1_catalogue_a4ec6a17ae60cd156cfb26948a95aeb6e}{
+\hyperlink{class_core_1_1_fournisseur}{Fournisseur} $\ast$ {\bfseries getRelation} () const }
+\label{de/d33/class_core_1_1_catalogue_a4ec6a17ae60cd156cfb26948a95aeb6e}
+
+\end{DoxyCompactItemize}
+\subsection*{Propriétés}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_core_1_1_catalogue_a8821131af357a9b16ae6b94b4a981eff}{
+QString {\bfseries code}}
+\label{de/d33/class_core_1_1_catalogue_a8821131af357a9b16ae6b94b4a981eff}
+
+\item 
+\hypertarget{class_core_1_1_catalogue_a48107e765325b571457934fbb91eef1b}{
+QDate {\bfseries dateEnregistrement}}
+\label{de/d33/class_core_1_1_catalogue_a48107e765325b571457934fbb91eef1b}
+
+\item 
+\hypertarget{class_core_1_1_catalogue_a39f10786cea1e953b528ef7ba5af054a}{
+\hyperlink{class_core_1_1_fournisseur}{Fournisseur} {\bfseries fournisseur}}
+\label{de/d33/class_core_1_1_catalogue_a39f10786cea1e953b528ef7ba5af054a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe représentant un catalogue. \begin{DoxyAuthor}{Auteur}
+Pandam, Soumsa, Tchirou, Wouro-\/Sama 
+\end{DoxyAuthor}
+
+
+Définition à la ligne 13 du fichier catalogue.h.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_core_1_1_catalogue_a1563d794f593a4978785d4e784628123}{
+\index{Core::Catalogue@{Core::Catalogue}!Catalogue@{Catalogue}}
+\index{Catalogue@{Catalogue}!Core::Catalogue@{Core::Catalogue}}
+\subsubsection[{Catalogue}]{\setlength{\rightskip}{0pt plus 5cm}Core::Catalogue::Catalogue (
+\begin{DoxyParamCaption}
+\item[{QObject $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{de/d33/class_core_1_1_catalogue_a1563d794f593a4978785d4e784628123}
+
+
+Crée un nouveau \hyperlink{class_core_1_1_catalogue}{Catalogue}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & Un pointeur vers l'objet parent du \hyperlink{class_core_1_1_catalogue}{Catalogue} \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 12 du fichier catalogue.cpp.
+
+\hypertarget{class_core_1_1_catalogue_a56f8f6931050a2592ebc2b2cb3f5ef1d}{
+\index{Core::Catalogue@{Core::Catalogue}!Catalogue@{Catalogue}}
+\index{Catalogue@{Catalogue}!Core::Catalogue@{Core::Catalogue}}
+\subsubsection[{Catalogue}]{\setlength{\rightskip}{0pt plus 5cm}Core::Catalogue::Catalogue (
+\begin{DoxyParamCaption}
+\item[{QString}]{code, }
+\item[{QObject $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{de/d33/class_core_1_1_catalogue_a56f8f6931050a2592ebc2b2cb3f5ef1d}
+
+
+Crée un nouveau \hyperlink{class_core_1_1_catalogue}{Catalogue}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em code} & Le code du \hyperlink{class_core_1_1_catalogue}{Catalogue} \\
+\hline
+{\em parent} & Un pointeur vers l'objet parent du \hyperlink{class_core_1_1_catalogue}{Catalogue} \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 21 du fichier catalogue.cpp.
+
+\hypertarget{class_core_1_1_catalogue_a5a96958fe38e82024175a2dbb40d7d29}{
+\index{Core::Catalogue@{Core::Catalogue}!Catalogue@{Catalogue}}
+\index{Catalogue@{Catalogue}!Core::Catalogue@{Core::Catalogue}}
+\subsubsection[{Catalogue}]{\setlength{\rightskip}{0pt plus 5cm}Core::Catalogue::Catalogue (
+\begin{DoxyParamCaption}
+\item[{QString}]{code, }
+\item[{QDate}]{dateEnregistrement, }
+\item[{QObject $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{de/d33/class_core_1_1_catalogue_a5a96958fe38e82024175a2dbb40d7d29}
+
+
+Crée un nouveau \hyperlink{class_core_1_1_catalogue}{Catalogue}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em code} & Le code du \hyperlink{class_core_1_1_catalogue}{Catalogue} \\
+\hline
+{\em dateEnregistrement} & La date à laquelle le catalogue a été reçu \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 32 du fichier catalogue.cpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_core_1_1_catalogue_a6dcea2e7862042cd9f05dae894d47a7c}{
+\index{Core::Catalogue@{Core::Catalogue}!getCode@{getCode}}
+\index{getCode@{getCode}!Core::Catalogue@{Core::Catalogue}}
+\subsubsection[{getCode}]{\setlength{\rightskip}{0pt plus 5cm}QString Core::Catalogue::getCode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{de/d33/class_core_1_1_catalogue_a6dcea2e7862042cd9f05dae894d47a7c}
+
+
+Renvoie le code du catalogue. 
+
+\begin{DoxyReturn}{Renvoie}
+code Le code du catalogue 
+\end{DoxyReturn}
+
+
+Définition à la ligne 43 du fichier catalogue.cpp.
+
+\hypertarget{class_core_1_1_catalogue_ac60f6d1630d03598e313ba497ab18f56}{
+\index{Core::Catalogue@{Core::Catalogue}!getDateEnregistrement@{getDateEnregistrement}}
+\index{getDateEnregistrement@{getDateEnregistrement}!Core::Catalogue@{Core::Catalogue}}
+\subsubsection[{getDateEnregistrement}]{\setlength{\rightskip}{0pt plus 5cm}QDate Core::Catalogue::getDateEnregistrement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{de/d33/class_core_1_1_catalogue_ac60f6d1630d03598e313ba497ab18f56}
+
+
+Renvoie la date à laquelle le catalogue a été enregistré 
+
+\begin{DoxyReturn}{Renvoie}
+dateEnregistrement La date d'enregistrement du catalogue 
+\end{DoxyReturn}
+
+
+Définition à la ligne 51 du fichier catalogue.cpp.
+
+\hypertarget{class_core_1_1_catalogue_aa8d603a01cab36e2be56a2f10219b56c}{
+\index{Core::Catalogue@{Core::Catalogue}!getFournisseur@{getFournisseur}}
+\index{getFournisseur@{getFournisseur}!Core::Catalogue@{Core::Catalogue}}
+\subsubsection[{getFournisseur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fournisseur} $\ast$ Core::Catalogue::getFournisseur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{de/d33/class_core_1_1_catalogue_aa8d603a01cab36e2be56a2f10219b56c}
+
+
+Renvoie l'objet \hyperlink{class_core_1_1_fournisseur}{Fournisseur} correspondant au fournisseur dont émane le catalogue. 
+
+\begin{DoxyReturn}{Renvoie}
+fournisseur Le fournisseur associé au catalogue 
+\end{DoxyReturn}
+
+
+Définition à la ligne 59 du fichier catalogue.cpp.
+
+\hypertarget{class_core_1_1_catalogue_a065f70f6b69ff02593e0be7813142be4}{
+\index{Core::Catalogue@{Core::Catalogue}!setCode@{setCode}}
+\index{setCode@{setCode}!Core::Catalogue@{Core::Catalogue}}
+\subsubsection[{setCode}]{\setlength{\rightskip}{0pt plus 5cm}void Core::Catalogue::setCode (
+\begin{DoxyParamCaption}
+\item[{QString}]{code}
+\end{DoxyParamCaption}
+)}}
+\label{de/d33/class_core_1_1_catalogue_a065f70f6b69ff02593e0be7813142be4}
+
+
+Modifie le code du catalogue. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em code} & Le nouveau code du catalogue \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 67 du fichier catalogue.cpp.
+
+\hypertarget{class_core_1_1_catalogue_a722b8c534479e7aad59a7d425250617c}{
+\index{Core::Catalogue@{Core::Catalogue}!setDateEnregistrement@{setDateEnregistrement}}
+\index{setDateEnregistrement@{setDateEnregistrement}!Core::Catalogue@{Core::Catalogue}}
+\subsubsection[{setDateEnregistrement}]{\setlength{\rightskip}{0pt plus 5cm}void Core::Catalogue::setDateEnregistrement (
+\begin{DoxyParamCaption}
+\item[{QDate}]{dateEnregistrement}
+\end{DoxyParamCaption}
+)}}
+\label{de/d33/class_core_1_1_catalogue_a722b8c534479e7aad59a7d425250617c}
+
+
+Modifie la date d'enregistrement du catalogue. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dateEnregistrement} & La nouvelle date d'enregistrement \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 75 du fichier catalogue.cpp.
+
+\hypertarget{class_core_1_1_catalogue_a5f1c6cd886338385a95ce8105dfd48e1}{
+\index{Core::Catalogue@{Core::Catalogue}!setFournisseur@{setFournisseur}}
+\index{setFournisseur@{setFournisseur}!Core::Catalogue@{Core::Catalogue}}
+\subsubsection[{setFournisseur}]{\setlength{\rightskip}{0pt plus 5cm}void Core::Catalogue::setFournisseur (
+\begin{DoxyParamCaption}
+\item[{{\bf Fournisseur} $\ast$}]{fournisseur}
+\end{DoxyParamCaption}
+)}}
+\label{de/d33/class_core_1_1_catalogue_a5f1c6cd886338385a95ce8105dfd48e1}
+
+
+Modifie le fournisseur associé au catalogue. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em fournisseur} & Le fournisseur qui sera associé au catalogue \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 83 du fichier catalogue.cpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants :\begin{DoxyCompactItemize}
+\item 
+core/catalogue.h\item 
+core/catalogue.cpp\end{DoxyCompactItemize}

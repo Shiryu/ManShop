@@ -3,29 +3,31 @@
 
 #include <QtSql>
 
-class CentraleAchat
+namespace Core
 {
+    class CentraleAchat
+    {
+    private:
+        QString m_code;
+        QString m_nom;
+        QString m_adresse;
 
-private:
-    QString m_code;
-    QString m_nom;
-    QString m_adresse;
+        CentraleAchat();
+        static CentraleAchat* instance;
 
-    CentraleAchat();
-    static CentraleAchat* instance;
+    public:
+        static CentraleAchat* getInstance();
 
-public:
-    static CentraleAchat* getInstance();
+        QString getCode() const;
+        QString getNom() const;
+        QString getAdresse() const;
 
-    QString getCode() const;
-    QString getNom() const;
-    QString getAdresse() const;
+        void setCode( QString code );
+        void setNom( QString nom );
+        void setAdresse( QString adresse );
 
-    void setCode( QString code );
-    void setNom( QString nom );
-    void setAdresse( QString adresse );
-
-    bool save();
+        bool save();
+    };
 };
 
 #endif // CENTRALEACHAT_H

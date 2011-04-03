@@ -4,34 +4,40 @@
 #include "produitstock.h"
 #include "stock.h"
 
-class RProduitStock : public QDjangoModel
+namespace Core
 {
-    Q_OBJECT
+    class RProduitStock : public QDjangoModel
+    {
+        Q_OBJECT
 
-    Q_PROPERTY( QString id READ getId WRITE setId )
-    Q_PROPERTY( Stock* stock READ getStock WRITE setStock )
-    Q_PROPERTY( ProduitStock* produit READ getProduit WRITE setProduit )
+        Q_PROPERTY( QString id READ getId WRITE setId )
+        Q_PROPERTY( Stock* stock READ getStock WRITE setStock )
+        Q_PROPERTY( ProduitStock* produit READ getProduit WRITE setProduit )
 
-    Q_CLASSINFO( "id", "primary_key=true" )
+        Q_CLASSINFO( "id", "primary_key=true" )
 
-private:
-    QString m_id;
+    private:
+        QString m_id;
 
-    QString creerId();
-    QString getId() const;
-    void setId( QString id );
+        Stock *stock;
+        ProduitStock *produit;
 
-public:
-    RProduitStock( QObject *parent = 0 );
+        QString creerId();
+        QString getId() const;
+        void setId( QString id );
 
-    Stock* getStock() const;
-    ProduitStock* getProduit() const;
+    public:
+        RProduitStock( QObject *parent = 0 );
 
-    void setStock( Stock* stock );
-    void setProduit( ProduitStock* produit );
+        Stock* getStock() const;
+        ProduitStock* getProduit() const;
 
-    bool save();
+        void setStock( Stock* stock );
+        void setProduit( ProduitStock* produit );
 
+        bool save();
+
+    };
 };
 
 #endif // RPRODUITSTOCK_H

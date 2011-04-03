@@ -3,32 +3,35 @@
 
 #include <QtSql>
 
-class Magasin
+namespace Core
 {
+    class Magasin
+    {
 
-private:
-    QString m_code;
-    QString m_nom;
-    QString m_adresse;
+    private:
+        QString m_code;
+        QString m_nom;
+        QString m_adresse;
 
-    Magasin();
-    static Magasin* instance;
+        Magasin();
+        static Magasin* instance;
 
-public:
-    static Magasin* getInstance();
+    public:
+        static Magasin* getInstance();
 
-    QString getCode() const;
-    QString getNom() const;
-    QString getAdresse() const;
+        QString getCode() const;
+        QString getNom() const;
+        QString getAdresse() const;
 
-    void setCode( QString code );
-    void setNom( QString nom );
-    void setAdresse( QString description );
+        void setCode( QString code );
+        void setNom( QString nom );
+        void setAdresse( QString description );
 
 
-    bool save();
+        bool save();
 
-    ~Magasin();
+        ~Magasin();
+    };
 };
 
 #endif // MAGASIN_H

@@ -3,27 +3,30 @@
 
 #include "produit.h"
 
-class ProduitVente : public Produit
+namespace Core
 {
-    Q_OBJECT
+    class ProduitVente : public Produit
+    {
+        Q_OBJECT
 
-    Q_PROPERTY( int quantiteVendue READ getQuantiteVendue WRITE setQuantiteVendue );
-    Q_PROPERTY( double prixUnitaire READ getPrixUnitaire WRITE setPrixUnitaire );
+        Q_PROPERTY( int quantiteVendue READ getQuantiteVendue WRITE setQuantiteVendue );
+        Q_PROPERTY( double prixUnitaire READ getPrixUnitaire WRITE setPrixUnitaire );
 
-private:
-    int m_quantiteVendue;
-    double m_prixUnitaire;
+    private:
+        int m_quantiteVendue;
+        double m_prixUnitaire;
 
-public:
-    ProduitVente( QObject *parent = 0 );
-    ProduitVente( QString code, QObject *parent = 0 );
+    public:
+        ProduitVente( QObject *parent = 0 );
+        ProduitVente( QString code, QObject *parent = 0 );
 
-    double getPrixUnitaire() const;
-    int getQuantiteVendue() const;
+        double getPrixUnitaire() const;
+        int getQuantiteVendue() const;
 
-    void setPrixUnitaire( double prixUnitaire );
-    void setQuantiteVendue( int quantiteVendue );
+        void setPrixUnitaire( double prixUnitaire );
+        void setQuantiteVendue( int quantiteVendue );
 
+    };
 };
 
 #endif // PRODUITVENTE_H

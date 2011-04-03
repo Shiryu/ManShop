@@ -1,48 +1,51 @@
 #include "rproduitstock.h"
 
-RProduitStock::RProduitStock( QObject *parent ) : QDjangoModel( parent )
+namespace Core
 {
-    setForeignKey( "stock", new Stock( this ) );
-    setForeignKey( "produit", new ProduitStock( this ) );
-}
+    RProduitStock::RProduitStock( QObject *parent ) : QDjangoModel( parent )
+    {
+        setForeignKey( "stock", new Stock( this ) );
+        setForeignKey( "produit", new ProduitStock( this ) );
+    }
 
-QString RProduitStock::getId() const
-{
-    return m_id;
-}
+    QString RProduitStock::getId() const
+    {
+        return m_id;
+    }
 
-void RProduitStock::setId( QString id )
-{
-    m_id = id;
-}
+    void RProduitStock::setId( QString id )
+    {
+        m_id = id;
+    }
 
-Stock* RProduitStock::getStock() const
-{
-    return qobject_cast< Stock* >( foreignKey("stock") );
-}
+    Stock* RProduitStock::getStock() const
+    {
+        return qobject_cast< Stock* >( foreignKey("stock") );
+    }
 
-ProduitStock* RProduitStock::getProduit() const
-{
-    return qobject_cast< ProduitStock* >( foreignKey("produit") );
-}
+    ProduitStock* RProduitStock::getProduit() const
+    {
+        return qobject_cast< ProduitStock* >( foreignKey("produit") );
+    }
 
-void RProduitStock::setStock( Stock* stock )
-{
-    setForeignKey( "stock", stock );
-}
+    void RProduitStock::setStock( Stock* stock )
+    {
+        setForeignKey( "stock", stock );
+    }
 
-void RProduitStock::setProduit( ProduitStock* produit )
-{
-    setForeignKey( "produit", produit );
-}
+    void RProduitStock::setProduit( ProduitStock* produit )
+    {
+        setForeignKey( "produit", produit );
+    }
 
-QString RProduitStock::creerId()
-{
-    return getStock()->getCode() + getProduit()->getCode();
-}
+    QString RProduitStock::creerId()
+    {
+        return getStock()->getCode() + getProduit()->getCode();
+    }
 
-bool RProduitStock::save()
-{
-    setId( creerId() );
-    return QDjangoModel::save();
+    bool RProduitStock::save()
+    {
+        setId( creerId() );
+        return QDjangoModel::save();
+    }
 }

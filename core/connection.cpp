@@ -1,71 +1,75 @@
 #include "connection.h"
 
-Connection* Connection::instance = NULL;
-
-Connection::Connection()
+namespace Core
 {
+    Connection* Connection::instance = NULL;
 
-}
+    Connection::Connection()
+    {
 
-Connection* Connection::getInstance()
-{
-    if( instance == NULL )
-        instance = new Connection();
+    }
 
-    return instance;
-}
+    Connection* Connection::getInstance()
+    {
+        if( instance == NULL )
+            instance = new Connection();
 
-bool Connection::connecter()
-{
-    QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
-    db.setDatabaseName( nomDB );
+        return instance;
+    }
 
-    db.open();
+    bool Connection::connecter()
+    {
+        QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
+        db.setDatabaseName( nomDB );
 
-    QDjango::setDatabase( db );
+        db.open();
 
-    QDjango::registerModel< Produit >();
-    QDjango::registerModel< ProduitStock >();
-    QDjango::registerModel< Stock >();
-    QDjango::registerModel< RProduitStock >();
-    QDjango::registerModel< Commande >();
-    QDjango::registerModel< Fournisseur >();
-    QDjango::registerModel< ProduitFournisseur >();
-    QDjango::registerModel< ProduitCommande >();
-    QDjango::registerModel< RProduitCommande >();
-    QDjango::registerModel< Catalogue >();
-    QDjango::registerModel< RProduitCatalogue >();
-    QDjango::registerModel< Livraison >();
-    QDjango::registerModel< Inventaire >();
-    QDjango::registerModel< ProduitInventaire >();
-    QDjango::registerModel< RProduitInventaire >();
-    QDjango::registerModel< Vente >();
-    QDjango::registerModel< ProduitVente >();
+        QDjango::setDatabase( db );
 
-    if(!QDjango::createTables())
-        return false;
+        QDjango::registerModel< Core::Produit >();
+        QDjango::registerModel< Core::ProduitStock >();
+        QDjango::registerModel< Core::Stock >();
+        QDjango::registerModel< Core::RProduitStock >();
+        QDjango::registerModel< Core::Commande >();
+        QDjango::registerModel< Core::Fournisseur >();
+        QDjango::registerModel< Core::ProduitFournisseur >();
+        QDjango::registerModel< Core::ProduitCommande >();
+        QDjango::registerModel< Core::RProduitCommande >();
+        QDjango::registerModel< Core::Catalogue >();
+        QDjango::registerModel< Core::RProduitCatalogue >();
+        QDjango::registerModel< Core::Livraison >();
+        QDjango::registerModel< Core::Inventaire >();
+        QDjango::registerModel< Core::ProduitInventaire >();
+        QDjango::registerModel< Core::RProduitInventaire >();
+        QDjango::registerModel< Core::Vente >();
+        QDjango::registerModel< Core::ProduitVente >();
 
-    creerTablesSingletons();
+        if(!QDjango::createTables())
+            return false;
 
-    return true;
-}
+        creerTablesSingletons();
 
-void Connection::creerTablesSingletons()
-{
-    QSqlQuery creationMagasin, creationCentraleAchat;
+        return true;
+    }
 
-    creationMagasin.exec( "CREATE TABLE magasin ( "
-                          "code TEXT PRIMARY KEY,"
-                          "nom TEXT,"
-                          "adresse TEXT )" );
+    void Connection::creerTablesSingletons()
+    {
+        QSqlQuery creationMagasin, creationCentraleAchat;
 
-    creationCentraleAchat.exec("CREATE TABLE centraleachat ("
-                 "code TEXT PRIMARY KEY,"
-                 "nom TEXT,"
-                 "adresse TEXT )");
-}
+        creationMagasin.exec( "CREATE TABLE magasin ( "
+                              "code TEXT PRIMARY KEY,"
+                              "nom TEXT,"
+                              "adresse TEXT )" );
 
-Connection::~Connection()
-{
-    delete instance;
+        creationCentraleAchat.exec("CREATE TABLE centraleachat ("
+                                   "code TEXT PRIMARY KEY,"
+                                   "nom TEXT,"
+                                   "adresse TEXT )");
+    }
+
+    Connection::~Connection()
+    {
+        delete instance;
+    }
+
 }
