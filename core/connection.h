@@ -21,6 +21,7 @@
 #include "rproduitinventaire.h"
 #include "vente.h"
 #include "produitvente.h"
+#include "typeproduit.h"
 
 const QString nomDB = "../ManShop/db/manshop.db";
 

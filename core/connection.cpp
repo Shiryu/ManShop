@@ -26,28 +26,29 @@ namespace Core
 
         QDjango::setDatabase( db );
 
-        QDjango::registerModel< Core::Produit >();
-        QDjango::registerModel< Core::ProduitStock >();
-        QDjango::registerModel< Core::Stock >();
-        QDjango::registerModel< Core::RProduitStock >();
-        QDjango::registerModel< Core::Commande >();
-        QDjango::registerModel< Core::Fournisseur >();
-        QDjango::registerModel< Core::ProduitFournisseur >();
-        QDjango::registerModel< Core::ProduitCommande >();
-        QDjango::registerModel< Core::RProduitCommande >();
-        QDjango::registerModel< Core::Catalogue >();
-        QDjango::registerModel< Core::RProduitCatalogue >();
-        QDjango::registerModel< Core::Livraison >();
-        QDjango::registerModel< Core::Inventaire >();
-        QDjango::registerModel< Core::ProduitInventaire >();
-        QDjango::registerModel< Core::RProduitInventaire >();
-        QDjango::registerModel< Core::Vente >();
-        QDjango::registerModel< Core::ProduitVente >();
-
-        if(!QDjango::createTables())
-            return false;
+        QDjango::registerModel< Produit >();
+        QDjango::registerModel< ProduitStock >();
+        QDjango::registerModel< Stock >();
+        QDjango::registerModel< RProduitStock >();
+        QDjango::registerModel< Commande >();
+        QDjango::registerModel< Fournisseur >();
+        QDjango::registerModel< ProduitFournisseur >();
+        QDjango::registerModel< ProduitCommande >();
+        QDjango::registerModel< RProduitCommande >();
+        QDjango::registerModel< Catalogue >();
+        QDjango::registerModel< RProduitCatalogue >();
+        QDjango::registerModel< Livraison >();
+        QDjango::registerModel< Inventaire >();
+        QDjango::registerModel< ProduitInventaire >();
+        QDjango::registerModel< RProduitInventaire >();
+        QDjango::registerModel< Vente >();
+        QDjango::registerModel< ProduitVente >();
+        QDjango::registerModel< TypeProduit >();
 
         creerTablesSingletons();
+
+        if( !QDjango::createTables() )
+            return false;
 
         return true;
     }

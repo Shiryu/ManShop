@@ -9,7 +9,12 @@ QT       += core gui sql
 TARGET = ManShop
 TEMPLATE = app
 
+#INCLUDEPATH += /opt/kdreports/include
+#INCLUDEPATH += /opt/kdchart/include
+
 LIBS += /usr/local/lib/libqdjango.a
+#LIBS += /opt/kdreports/lib/*
+#LIBS += /opt/kdchart/lib/libkdchart.so
 
 SOURCES += main.cpp \
     core/produit.cpp \
@@ -32,8 +37,8 @@ SOURCES += main.cpp \
     core/rproduitinventaire.cpp \
     core/vente.cpp \
     core/produitvente.cpp \
-    model/mstablemodel.cpp \
-    model/msrelationaltablemodel.cpp
+    core/typeproduit.cpp \
+    model/msetablemodel.cpp
 
 
 HEADERS  += \
@@ -60,4 +65,6 @@ HEADERS  += \
     core/produitvente.h \
     model/mstablemodel.h \
     util/util.h \
-    model/msrelationaltablemodel.h
+    model/msrelationaltablemodel.h \
+    core/typeproduit.h \
+    model/msetablemodel.h

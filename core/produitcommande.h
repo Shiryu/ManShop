@@ -5,6 +5,9 @@
 
 namespace Core
 {
+    /*! \class ProduitCommande
+      * \brief Représente un produit d'une commande
+      */
     class ProduitCommande : public ProduitFournisseur
     {
         Q_OBJECT
@@ -12,7 +15,7 @@ namespace Core
         Q_PROPERTY( int quantiteCommandee READ getQuantiteCommandee WRITE setQuantiteCommandee )
 
     private:
-                int m_quantiteCommandee;
+        int m_quantiteCommandee;
 
     public:
         ProduitCommande( QObject *parent = 0 );

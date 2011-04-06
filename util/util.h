@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QDebug>
+#include <qdjango/QDjangoQuerySet.h>
 
 namespace Util
 {
@@ -30,6 +31,25 @@ namespace Util
 
             if( position_espace != -1 )
                 resultat.insert( position_espace, QString( " " ) );
+
+            return resultat;
+        }
+
+        template < typename S, typename T, typename U >
+        inline static QDjangoQuerySet< S > listeProduits( U *u )
+        {
+            QDjangoQuerySet< T > relations;
+            relations = relations.filter( QDjangoWhere( "id", QDjangoWhere::Contains, u->getCode() ) );
+
+            QStringList listeCodes;
+            for( int i = 0; i < relations.size(); ++i )
+            {
+                T *t = relations.at( i );
+                listeCodes.append( t->getProduit()->getCode() );
+            }
+
+            QDjangoQuerySet< S > resultat;
+            resultat = resultat.filter( QDjangoWhere( "code", QDjangoWhere::IsIn, listeCodes ) );
 
             return resultat;
         }

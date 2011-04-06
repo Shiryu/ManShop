@@ -43,6 +43,24 @@ namespace Core
         return getStock()->getCode() + getProduit()->getCode();
     }
 
+    QDjangoQuerySet< ProduitStock > RProduitStock::listeProduits( Stock *s )
+    {
+        QDjangoQuerySet< RProduitStock > relations;
+        relations = relations.filter( QDjangoWhere( "id", QDjangoWhere::Contains, s->getCode() ) );
+
+        QStringList liste;
+        for( int i = 0; i < relations.size(); ++i )
+        {
+            RProduitStock *r = relations.at( i );
+            liste.append( r->getProduit()->getCode() );
+        }
+
+        QDjangoQuerySet< ProduitStock > resultat;
+        resultat = resultat.filter( QDjangoWhere( "code", QDjangoWhere::IsIn, liste ) );
+
+        return resultat;
+    }
+
     bool RProduitStock::save()
     {
         setId( creerId() );

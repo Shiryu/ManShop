@@ -2,16 +2,25 @@
 
 namespace Core
 {
-    Vente::Vente()
+    Vente::Vente( QObject *parent ) : QDjangoModel( parent )
     {
     }
 
-    Vente::Vente(QString code): m_code(code){}
+    Vente::Vente( QString code, QObject *parent ) :
+            QDjangoModel( parent ),
+            m_code(code)
+    {
 
-    Vente::Vente(QString code, double montant, QDate date):
+    }
+
+    Vente::Vente( QString code, double montant, QDate date, QObject *parent ):
+            QDjangoModel( parent ),
             m_code(code),
             m_montant(montant),
-            m_date(date){}
+            m_date(date)
+    {
+
+    }
 
     QString Vente::getCode() const
     {
@@ -28,17 +37,17 @@ namespace Core
         return m_date;
     }
 
-    void Vente::setCode(QString code)
+    void Vente::setCode( QString code )
     {
         m_code=code;
     }
 
-    void Vente::setMontant(double montant)
+    void Vente::setMontant( double montant )
     {
         m_montant=montant;
     }
 
-    void Vente::setDate(QDate date)
+    void Vente::setDate( QDate date )
     {
         m_date=date;
     }

@@ -4,6 +4,7 @@
 /*! \namespace Core
   * \brief Regroupe un ensemble de classes de base représentant les données manipulées par le programe
   */
+
 namespace Core
 {
     /*! \brief Crée un nouveau Catalogue

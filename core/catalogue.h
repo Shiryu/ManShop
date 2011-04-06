@@ -1,14 +1,12 @@
 #ifndef CATALOGUE_H
 #define CATALOGUE_H
 
-#include <QDate>
 #include "fournisseur.h"
 
 namespace Core
 {
     /*! \class Catalogue
       * \brief Classe représentant un catalogue
-      * \author Pandam, Soumsa, Tchirou, Wouro-Sama
       */
     class Catalogue : public QDjangoModel
     {
@@ -16,13 +14,14 @@ namespace Core
 
         Q_PROPERTY( QString code READ getCode WRITE setCode )
         Q_PROPERTY( QDate dateEnregistrement READ getDateEnregistrement WRITE setDateEnregistrement )
-        Q_PROPERTY( Fournisseur* fournisseur READ getFournisseur WRITE setFournisseur )
+        Q_PROPERTY( Core::Fournisseur* fournisseur READ getFournisseur WRITE setFournisseur )
 
         Q_CLASSINFO( "code", "primary_key=true" )
 
     private:
         QString m_code;
         QDate m_dateEnregistrement;
+
         Fournisseur *fournisseur;
 
     public:

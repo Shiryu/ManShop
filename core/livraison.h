@@ -10,13 +10,13 @@ namespace Core
         Q_OBJECT
 
         Q_PROPERTY( QString code READ getCode WRITE setCode )
-                Q_PROPERTY( QDate date READ getDate WRITE setDate )
-                Q_PROPERTY( Commande* commande READ getCommande WRITE setCommande )
+        Q_PROPERTY( QDate date READ getDate WRITE setDate )
+        Q_PROPERTY( Core::Commande* commande READ getCommande WRITE setCommande )
 
-                Q_CLASSINFO( "code", "primary_key=true" )
+        Q_CLASSINFO( "code", "primary_key=true" )
 
     private:
-                QString m_code;
+        QString m_code;
         QDate m_date;
 
         Commande *commande;

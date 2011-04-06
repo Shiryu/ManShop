@@ -11,8 +11,8 @@ namespace Core
         Q_OBJECT
 
         Q_PROPERTY( QString id READ getId WRITE setId )
-        Q_PROPERTY( Commande* commande READ getCommande WRITE setCommande )
-        Q_PROPERTY( ProduitCommande* produit READ getProduit WRITE setProduit )
+        Q_PROPERTY( Core::Commande* commande READ getCommande WRITE setCommande )
+        Q_PROPERTY( Core::ProduitCommande* produit READ getProduit WRITE setProduit )
 
         Q_CLASSINFO( "id", "primary_key=true" )
 

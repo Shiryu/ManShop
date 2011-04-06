@@ -5,6 +5,9 @@
 
 namespace Core
 {
+    /*! \class ProduitFournisseur
+      * \brief Représente un produit d'un catalogue d'un fournisseur
+      */
     class ProduitFournisseur : public Produit
     {
         Q_OBJECT

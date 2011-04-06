@@ -13,7 +13,7 @@ namespace Core
         Q_PROPERTY( QString code READ getCode WRITE setCode )
         Q_PROPERTY( QDate date READ getDate WRITE setDate )
         Q_PROPERTY( int etat READ getEtat WRITE setEtat )
-        Q_PROPERTY( Fournisseur* fournisseur READ getFournisseur WRITE setFournisseur )
+        Q_PROPERTY( Core::Fournisseur* fournisseur READ getFournisseur WRITE setFournisseur )
 
         Q_CLASSINFO( "code", "primary_key=true" )
 

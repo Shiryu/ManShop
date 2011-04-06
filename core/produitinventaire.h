@@ -5,6 +5,9 @@
 
 namespace Core
 {
+    /*! \class ProduitInventaire
+      * \brief Représente un produit d'un inventaire
+      */
     class ProduitInventaire : public Produit
     {
         Q_OBJECT
@@ -17,6 +20,12 @@ namespace Core
         int m_etat;
 
     public:
+        /*! \enum Etat
+          * \brief Représente l'état d'un produit dans un inventaire
+          * \param BonEtat Le produit est en bon état
+          * \param Deteriore Le produit est détérioré
+          * \param Vole Le produit est volé
+          */
         enum Etat
         {
             BonEtat,

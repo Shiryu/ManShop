@@ -11,13 +11,13 @@ namespace Core
         Q_OBJECT
 
         Q_PROPERTY( QString id READ getId WRITE setId )
-                Q_PROPERTY( Inventaire* inventaire READ getInventaire WRITE setInventaire )
-                Q_PROPERTY( ProduitInventaire* produit READ getProduit WRITE setProduit )
+        Q_PROPERTY( Core::Inventaire* inventaire READ getInventaire WRITE setInventaire )
+        Q_PROPERTY( Core::ProduitInventaire* produit READ getProduit WRITE setProduit )
 
-                Q_CLASSINFO( "id", "primary_key=true" )
+        Q_CLASSINFO( "id", "primary_key=true" )
 
     private:
-                QString m_id;
+        QString m_id;
 
         Inventaire *inventaire;
         ProduitInventaire *produit;

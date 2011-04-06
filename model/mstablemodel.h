@@ -9,7 +9,7 @@
 #include "util/util.h"
 
 /*! \namespace Model
-  * \brief Regroupe un ensemble de modèles dérivant de QAbstractTableModel
+  * \brief Regroupe un ensemble de modèles permettant d'utiliser les données de Core avec le framework Modèle/Vue de Qt
   */
 namespace Model
 {
@@ -99,10 +99,13 @@ namespace Model
     template < typename S >
     QVariant MSTableModel< S >::data( const QModelIndex &index, int role ) const
     {
+        int m = rowCount();
+        int n = columnCount();
+
         if( !index.isValid() )
             return QVariant();
 
-        if( index.row() < 0 || index.row() >= rowCount() || index.column() < 0 || index.column() >= columnCount() )
+        if( index.row() < 0 || index.row() >= m || index.column() < 0 || index.column() >= n )
             return QVariant();
 
         if( role == Qt::DisplayRole )

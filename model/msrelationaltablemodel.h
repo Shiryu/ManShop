@@ -5,30 +5,31 @@
 #include <QMetaProperty>
 #include <qdjango/QDjangoQuerySet.h>
 #include <QDebug>
-#include "core/fournisseur.h"
+
 #include "util/util.h"
 
 namespace Model
 {
     template < typename S, typename T >
-            class MSRelationalTableModel : public QAbstractTableModel
+    class MSRelationalTableModel : public QAbstractTableModel
     {
 
     private:
         QDjangoQuerySet< S > m_source;
         QDjangoQuerySet< T > m_cible;
-        const char *m_liaison;
+        const char *m_src;
+        const char *m_dest;
 
     public:
         const static int NB_CHAMPS_PAR_DEFAUT = 2;
 
         MSRelationalTableModel( QObject *parent = 0 );
         MSRelationalTableModel( const QDjangoQuerySet< S > &source, const QDjangoQuerySet< T > &cible, QObject *parent = 0 );
-        MSRelationalTableModel( const QDjangoQuerySet< S > &source, const QDjangoQuerySet< T > &cible, const char *liaison, QObject *parent = 0 );
 
         void setSrcQuerySet( QDjangoQuerySet< S > &source );
         void setDestQuerySet( QDjangoQuerySet< T > &cible );
-        void setRelation( const char *liaison );
+
+        void setRelation( const char *src, const char *dest );
 
         int rowCount( const QModelIndex &parent = QModelIndex() ) const;
         int columnCount( const QModelIndex &parent = QModelIndex() ) const;
@@ -37,13 +38,13 @@ namespace Model
     };
 
     template < typename S, typename T >
-            MSRelationalTableModel< S, T >::MSRelationalTableModel( QObject *parent ) : QAbstractTableModel( parent )
+    MSRelationalTableModel< S, T >::MSRelationalTableModel( QObject *parent ) : QAbstractTableModel( parent )
     {
 
     }
 
     template < typename S, typename T >
-            MSRelationalTableModel< S, T >::MSRelationalTableModel( const QDjangoQuerySet<S> &source, const QDjangoQuerySet<T> &cible, QObject *parent ) :
+    MSRelationalTableModel< S, T >::MSRelationalTableModel( const QDjangoQuerySet<S> &source, const QDjangoQuerySet<T> &cible, QObject *parent ) :
             QAbstractTableModel( parent ),
             m_source( source ),
             m_cible( cible )
@@ -51,42 +52,34 @@ namespace Model
 
     }
 
-    template < typename S, typename T >
-            MSRelationalTableModel< S, T >::MSRelationalTableModel( const QDjangoQuerySet<S> &source, const QDjangoQuerySet<T> &cible, const char *liaison, QObject *parent ) :
-            QAbstractTableModel( parent ),
-            m_source( source ),
-            m_cible( cible ),
-            m_liaison( liaison )
-    {
-
-    }
 
     template < typename S, typename T >
-            void MSRelationalTableModel< S, T >::setSrcQuerySet( QDjangoQuerySet<S> &source )
+    void MSRelationalTableModel< S, T >::setSrcQuerySet( QDjangoQuerySet<S> &source )
     {
         m_source = source;
     }
 
     template < typename S, typename T >
-            void MSRelationalTableModel< S, T >::setDestQuerySet( QDjangoQuerySet< T > &cible )
+    void MSRelationalTableModel< S, T >::setDestQuerySet( QDjangoQuerySet< T > &cible )
     {
         m_cible = cible;
     }
 
     template < typename S, typename T >
-            void MSRelationalTableModel< S, T >::setRelation( const char *liaison )
+    void MSRelationalTableModel< S, T >::setRelation( const char *src, const char *dest )
     {
-        m_liaison = liaison;
+        m_src = src;
+        m_dest = dest;
     }
 
     template < typename S, typename T >
-            int MSRelationalTableModel< S, T >::rowCount( const QModelIndex &parent ) const
+    int MSRelationalTableModel< S, T >::rowCount( const QModelIndex &parent ) const
     {
         return m_source.count();
     }
 
     template < typename S, typename T >
-            int MSRelationalTableModel< S, T >::columnCount( const QModelIndex &parent ) const
+    int MSRelationalTableModel< S, T >::columnCount( const QModelIndex &parent ) const
     {
         S *objet = new S();
 
@@ -97,12 +90,15 @@ namespace Model
     }
 
     template < typename S, typename T >
-            QVariant MSRelationalTableModel< S, T >::data( const QModelIndex &index, int role ) const
+    QVariant MSRelationalTableModel< S, T >::data( const QModelIndex &index, int role ) const
     {
+        int m = rowCount();
+        int n = columnCount();
+
         if( !index.isValid() )
             return QVariant();
 
-        if( index.row() < 0 || index.row() >= rowCount() || index.column() < 0 || index.column() >= columnCount () )
+        if( index.row() < 0 || index.row() >= m || index.column() < 0 || index.column() >= n )
             return QVariant();
 
         if( role == Qt::DisplayRole )
@@ -111,26 +107,23 @@ namespace Model
 
             S *objet = dataSource.at( index. row() );
 
-            if( index.column() < columnCount() - 1)
-            {
-                const QMetaObject *metaobjet = objet->metaObject();
-                QMetaProperty metaprop = metaobjet->property( index.column() + NB_CHAMPS_PAR_DEFAUT );
+            const QMetaObject *metaobjet = objet->metaObject();
+            QMetaProperty metaprop = metaobjet->property( index.column() + NB_CHAMPS_PAR_DEFAUT );
 
-                return objet->property( metaprop.name() );
-            }
-            else
+            if( strcmp( metaprop.name(), m_src ) == 0 )
             {
                 T *objetCible = objet->getRelation();
-
-                return objetCible->property( m_liaison );
+                return objetCible->property( m_dest );
             }
+
+            return objet->property( metaprop.name() );
         }
 
         return QVariant();
     }
 
     template < typename S, typename T >
-            QVariant MSRelationalTableModel< S, T >::headerData( int section, Qt::Orientation orientation, int role ) const
+    QVariant MSRelationalTableModel< S, T >::headerData( int section, Qt::Orientation orientation, int role ) const
     {
         if( role != Qt::DisplayRole )
             return QVariant();

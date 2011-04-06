@@ -2,9 +2,14 @@
 #define PRODUIT_H
 
 #include "objet.h"
+#include "typeproduit.h"
 
 namespace Core
 {
+    /*! \class Produit
+      * \brief Cette classe représente la classe de base pour tous les produits de l'application. Chaque autre
+      *        type de produit hérite de cette classe
+      */
     class Produit : public QDjangoModel
     {
         Q_OBJECT
@@ -13,6 +18,7 @@ namespace Core
         Q_PROPERTY( QString constructeur READ getConstructeur WRITE setConstructeur )
         Q_PROPERTY( QString nom READ getNom WRITE setNom )
         Q_PROPERTY( QString description READ getDescription WRITE setDescription )
+        Q_PROPERTY( Core::TypeProduit* type READ getType WRITE setType )
 
         Q_CLASSINFO( "code", "primary_key=true" )
 
@@ -21,6 +27,8 @@ namespace Core
         QString m_constructeur;
         QString m_nom;
         QString m_description;
+
+        TypeProduit *type;
 
     public:
         Produit( QObject *parent = 0 );
@@ -31,11 +39,15 @@ namespace Core
         QString getConstructeur() const;
         QString getNom() const;
         QString getDescription() const;
+        TypeProduit* getType() const;
 
         void setCode( QString code );
         void setConstructeur( QString constructeur );
         void setNom( QString nom );
         void setDescription( QString description );
+        void setType( TypeProduit *type );
+
+        TypeProduit* getRelation() const { return getType(); }
     };
 };
 

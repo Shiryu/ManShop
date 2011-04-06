@@ -6,7 +6,7 @@
 
 namespace Core
 {
-    class Vente: public Objet
+    class Vente: public QDjangoModel
     {
         Q_OBJECT
 
@@ -23,9 +23,9 @@ namespace Core
 
     public:
 
-        Vente();
-        Vente( QString code );
-        Vente( QString code, double montant, QDate date );
+        Vente( QObject *parent = 0 );
+        Vente( QString code, QObject *parent = 0 );
+        Vente( QString code, double montant, QDate date, QObject *parent = 0 );
 
         QString getCode() const;
         double getMontant() const;
