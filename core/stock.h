@@ -13,6 +13,7 @@ namespace Core
         Q_PROPERTY( QString nom READ getNom WRITE setNom )
         Q_PROPERTY( QDate dateCreation READ getDateCreation WRITE setDateCreation )
 
+        Q_CLASSINFO( "__meta__", "db_table=stock" )
         Q_CLASSINFO( "code", "primary_key=true" )
 
     private:

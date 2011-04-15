@@ -3,7 +3,7 @@
 
 #include <qdjango/QDjangoQuerySet.h>
 
-#include "produitstock.h"
+#include "produit.h"
 #include "stock.h"
 
 namespace Core
@@ -13,16 +13,21 @@ namespace Core
         Q_OBJECT
 
         Q_PROPERTY( QString id READ getId WRITE setId )
-        Q_PROPERTY( Core::Stock* stock READ getStock WRITE setStock )
-        Q_PROPERTY( Core::ProduitStock* produit READ getProduit WRITE setProduit )
 
+        Q_PROPERTY( int quantite READ getQuantite WRITE setQuantite )
+
+        Q_PROPERTY( Core::Stock* stock READ getStock WRITE setStock )
+        Q_PROPERTY( Core::Produit* produit READ getProduit WRITE setProduit )
+
+        Q_CLASSINFO( "__meta__", "db_table=rproduitstock" )
         Q_CLASSINFO( "id", "primary_key=true" )
 
     private:
         QString m_id;
 
+        int m_quantite;
         Stock *stock;
-        ProduitStock *produit;
+        Produit *produit;
 
         QString creerId();
         QString getId() const;
@@ -31,13 +36,13 @@ namespace Core
     public:
         RProduitStock( QObject *parent = 0 );
 
+        int getQuantite() const;
         Stock* getStock() const;
-        ProduitStock* getProduit() const;
+        Produit* getProduit() const;
 
+        void setQuantite( int quantite );
         void setStock( Stock* stock );
-        void setProduit( ProduitStock* produit );
-
-        static QDjangoQuerySet< ProduitStock > listeProduits( Stock *s );
+        void setProduit( Produit* produit );
 
         bool save();
 

@@ -16,6 +16,7 @@ namespace Core
         Q_PROPERTY( QDate dateEnregistrement READ getDateEnregistrement WRITE setDateEnregistrement )
         Q_PROPERTY( Core::Fournisseur* fournisseur READ getFournisseur WRITE setFournisseur )
 
+        Q_CLASSINFO( "__meta__", "db_table=catalogue" )
         Q_CLASSINFO( "code", "primary_key=true" )
 
     private:

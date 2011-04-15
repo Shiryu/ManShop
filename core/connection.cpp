@@ -27,23 +27,21 @@ namespace Core
         QDjango::setDatabase( db );
 
         QDjango::registerModel< Produit >();
-        QDjango::registerModel< ProduitStock >();
         QDjango::registerModel< Stock >();
         QDjango::registerModel< RProduitStock >();
         QDjango::registerModel< Commande >();
         QDjango::registerModel< Fournisseur >();
-        QDjango::registerModel< ProduitFournisseur >();
-        QDjango::registerModel< ProduitCommande >();
         QDjango::registerModel< RProduitCommande >();
         QDjango::registerModel< Catalogue >();
         QDjango::registerModel< RProduitCatalogue >();
         QDjango::registerModel< Livraison >();
         QDjango::registerModel< Inventaire >();
-        QDjango::registerModel< ProduitInventaire >();
         QDjango::registerModel< RProduitInventaire >();
         QDjango::registerModel< Vente >();
-        QDjango::registerModel< ProduitVente >();
         QDjango::registerModel< TypeProduit >();
+        QDjango::registerModel< Vente >();
+        QDjango::registerModel< RProduitVente >();
+        QDjango::registerModel< Temp >();
 
         creerTablesSingletons();
 

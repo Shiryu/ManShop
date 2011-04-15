@@ -15,6 +15,8 @@ namespace Core
         Q_PROPERTY( int quantite READ getQuantite WRITE setQuantite )
         Q_PROPERTY( int etat READ getEtat WRITE setEtat )
 
+        Q_CLASSINFO( "__meta__", "db_table=produitinventaire" )
+
     private:
         int m_quantite;
         int m_etat;

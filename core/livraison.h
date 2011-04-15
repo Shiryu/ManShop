@@ -13,6 +13,7 @@ namespace Core
         Q_PROPERTY( QDate date READ getDate WRITE setDate )
         Q_PROPERTY( Core::Commande* commande READ getCommande WRITE setCommande )
 
+        Q_CLASSINFO( "__meta__", "db_table=livraison" )
         Q_CLASSINFO( "code", "primary_key=true" )
 
     private:

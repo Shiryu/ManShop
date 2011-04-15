@@ -5,7 +5,7 @@ namespace Core
     RProduitStock::RProduitStock( QObject *parent ) : QDjangoModel( parent )
     {
         setForeignKey( "stock", new Stock( this ) );
-        setForeignKey( "produit", new ProduitStock( this ) );
+        setForeignKey( "produit", new Produit( this ) );
     }
 
     QString RProduitStock::getId() const
@@ -18,14 +18,24 @@ namespace Core
         m_id = id;
     }
 
+    int RProduitStock::getQuantite() const
+    {
+        return m_quantite;
+    }
+
+    void RProduitStock::setQuantite( int quantite )
+    {
+        m_quantite = quantite;
+    }
+
     Stock* RProduitStock::getStock() const
     {
         return qobject_cast< Stock* >( foreignKey("stock") );
     }
 
-    ProduitStock* RProduitStock::getProduit() const
+    Produit* RProduitStock::getProduit() const
     {
-        return qobject_cast< ProduitStock* >( foreignKey("produit") );
+        return qobject_cast< Produit* >( foreignKey("produit") );
     }
 
     void RProduitStock::setStock( Stock* stock )
@@ -33,7 +43,7 @@ namespace Core
         setForeignKey( "stock", stock );
     }
 
-    void RProduitStock::setProduit( ProduitStock* produit )
+    void RProduitStock::setProduit( Produit* produit )
     {
         setForeignKey( "produit", produit );
     }
@@ -41,24 +51,6 @@ namespace Core
     QString RProduitStock::creerId()
     {
         return getStock()->getCode() + getProduit()->getCode();
-    }
-
-    QDjangoQuerySet< ProduitStock > RProduitStock::listeProduits( Stock *s )
-    {
-        QDjangoQuerySet< RProduitStock > relations;
-        relations = relations.filter( QDjangoWhere( "id", QDjangoWhere::Contains, s->getCode() ) );
-
-        QStringList liste;
-        for( int i = 0; i < relations.size(); ++i )
-        {
-            RProduitStock *r = relations.at( i );
-            liste.append( r->getProduit()->getCode() );
-        }
-
-        QDjangoQuerySet< ProduitStock > resultat;
-        resultat = resultat.filter( QDjangoWhere( "code", QDjangoWhere::IsIn, liste ) );
-
-        return resultat;
     }
 
     bool RProduitStock::save()

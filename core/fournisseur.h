@@ -13,6 +13,7 @@ namespace Core
         Q_PROPERTY( QString nom READ getNom WRITE setNom )
         Q_PROPERTY( QString adresse READ getAdresse WRITE setAdresse )
 
+        Q_CLASSINFO( "__meta__", "db_table=fournisseur" )
         Q_CLASSINFO( "code", "primary_key=true" )
 
     private:

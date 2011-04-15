@@ -15,6 +15,8 @@ namespace Core
         Q_PROPERTY( QString codeFournisseur READ getCodeFournisseur WRITE setCodeFournisseur )
         Q_PROPERTY( double prixFournisseur READ getPrixFournisseur WRITE setPrixFournisseur )
 
+        Q_CLASSINFO( "__meta__", "db_table=produitfournisseur" )
+
     private:
         QString m_codeFournisseur;
         double m_prixFournisseur;

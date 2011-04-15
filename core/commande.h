@@ -15,6 +15,7 @@ namespace Core
         Q_PROPERTY( int etat READ getEtat WRITE setEtat )
         Q_PROPERTY( Core::Fournisseur* fournisseur READ getFournisseur WRITE setFournisseur )
 
+        Q_CLASSINFO( "__meta__", "db_table=commande" )
         Q_CLASSINFO( "code", "primary_key=true" )
 
     private:

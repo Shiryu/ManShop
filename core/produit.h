@@ -19,7 +19,9 @@ namespace Core
         Q_PROPERTY( QString nom READ getNom WRITE setNom )
         Q_PROPERTY( QString description READ getDescription WRITE setDescription )
         Q_PROPERTY( Core::TypeProduit* type READ getType WRITE setType )
+        Q_PROPERTY( double prixUnitaire READ getPrixUnitaire WRITE setPrixUnitaire )
 
+        Q_CLASSINFO( "__meta__", "db_table=produit" )
         Q_CLASSINFO( "code", "primary_key=true" )
 
     private:
@@ -27,8 +29,8 @@ namespace Core
         QString m_constructeur;
         QString m_nom;
         QString m_description;
-
         TypeProduit *type;
+        double m_prixUnitaire;
 
     public:
         Produit( QObject *parent = 0 );
@@ -40,14 +42,14 @@ namespace Core
         QString getNom() const;
         QString getDescription() const;
         TypeProduit* getType() const;
+        double getPrixUnitaire() const;
 
         void setCode( QString code );
         void setConstructeur( QString constructeur );
         void setNom( QString nom );
         void setDescription( QString description );
         void setType( TypeProduit *type );
-
-        TypeProduit* getRelation() const { return getType(); }
+        void setPrixUnitaire( double prixUnitaire );
     };
 };
 

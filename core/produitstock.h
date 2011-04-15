@@ -12,8 +12,10 @@ namespace Core
     {
         Q_OBJECT
 
-        Q_PROPERTY( int quantite READ getQuantite WRITE setQuantite )
+        //Q_PROPERTY( int quantite READ getQuantite WRITE setQuantite )
         Q_PROPERTY( double prixUnitaire READ getPrixUnitaire WRITE setPrixUnitaire )
+
+        Q_CLASSINFO( "__meta__", "db_table=produitstock" )
 
     private:
         int m_quantite;
@@ -23,7 +25,7 @@ namespace Core
         ProduitStock( QObject *parent = 0 );
         ProduitStock( QString code, QObject *parent = 0 );
 
-        int getQuantite() const;
+        //int getQuantite() const;
         double getPrixUnitaire() const;
 
         void setQuantite( int quantite );

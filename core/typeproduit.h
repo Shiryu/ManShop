@@ -10,12 +10,13 @@ namespace Core
         Q_OBJECT
 
         Q_PROPERTY( QString code READ getCode WRITE setCode )
-                Q_PROPERTY( QString libelle READ getLibelle WRITE setLibelle )
+        Q_PROPERTY( QString libelle READ getLibelle WRITE setLibelle )
 
-                Q_CLASSINFO( "code", "primary_key=true" )
+        Q_CLASSINFO( "__meta__", "db_table=typeproduit" )
+        Q_CLASSINFO( "code", "primary_key=true" )
 
     private:
-                QString m_code;
+        QString m_code;
         QString m_libelle;
 
     public:

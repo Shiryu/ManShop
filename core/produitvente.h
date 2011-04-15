@@ -12,6 +12,8 @@ namespace Core
         Q_PROPERTY( int quantiteVendue READ getQuantiteVendue WRITE setQuantiteVendue );
         Q_PROPERTY( double prixUnitaire READ getPrixUnitaire WRITE setPrixUnitaire );
 
+        Q_CLASSINFO( "__meta__", "db_table=produitvente" )
+
     private:
         int m_quantiteVendue;
         double m_prixUnitaire;

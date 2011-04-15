@@ -5,13 +5,11 @@
 #include <qdjango/QDjango.h>
 
 #include "produit.h"
-#include "produitstock.h"
 #include "rproduitstock.h"
 #include "magasin.h"
 #include "commande.h"
 #include "centraleachat.h"
 #include "fournisseur.h"
-#include "produitcommande.h"
 #include "rproduitcommande.h"
 #include "catalogue.h"
 #include "rproduitcatalogue.h"
@@ -20,10 +18,14 @@
 #include "produitinventaire.h"
 #include "rproduitinventaire.h"
 #include "vente.h"
-#include "produitvente.h"
 #include "typeproduit.h"
+#include "rproduitvente.h"
+#include "etat.h"
+#include "temp.h"
 
-const QString nomDB = "../ManShop/db/manshop.db";
+//const QString nomDB = "/home/feysal/ManShop/db/manshop.db";
+
+const QString nomDB = "C:\\Documents and Settings\\Administrateur\\Mes documents\\ManShop\\db\\manshop.db";
 
 namespace Core
 {
@@ -37,6 +39,7 @@ namespace Core
         static Connection* getInstance();
 
         bool connecter();
+
         void creerTablesSingletons();
 
         ~Connection();

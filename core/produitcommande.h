@@ -14,6 +14,8 @@ namespace Core
 
         Q_PROPERTY( int quantiteCommandee READ getQuantiteCommandee WRITE setQuantiteCommandee )
 
+        Q_CLASSINFO( "__meta__", "db_table=produitcommande" )
+
     private:
         int m_quantiteCommandee;
 

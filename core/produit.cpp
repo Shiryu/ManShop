@@ -69,12 +69,17 @@ namespace Core
         return m_description;
     }
 
-    /*! \brief Renvoie le type de produit associé à ce produit
+    /*! \brief Renvoie le type de produit associé �  ce produit
       * \return type Un pointeur TypeProduit représentant le type du produit
       */
     TypeProduit* Produit::getType() const
     {
         return qobject_cast< TypeProduit* >( foreignKey( "type" ) );
+    }
+
+    double Produit::getPrixUnitaire() const
+    {
+        return m_prixUnitaire;
     }
 
     /*! \brief Modifie le code du produit
@@ -115,5 +120,10 @@ namespace Core
     void Produit::setType( TypeProduit *type )
     {
         setForeignKey( "type", type );
+    }
+
+    void Produit::setPrixUnitaire( double prixUnitaire )
+    {
+        m_prixUnitaire = prixUnitaire;
     }
 }

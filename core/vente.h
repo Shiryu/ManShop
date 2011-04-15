@@ -14,6 +14,7 @@ namespace Core
         Q_PROPERTY( double montant READ getMontant WRITE setMontant )
         Q_PROPERTY( QDate date READ getDate WRITE setDate )
 
+        Q_CLASSINFO( "__meta__", "db_table=vente" )
         Q_CLASSINFO( "code", "primary_key=true" )
 
     private:
